@@ -1,0 +1,114 @@
+{
+  "version": "0.1.0",
+  "note": "Lời khen/hướng dẫn bằng tiếng Nhật, chỉ nghe không cần đọc chữ.",
+  "phrases": [
+    {
+      "id": "ui_sugoi",
+      "text": "すごい",
+      "vi": "Tuyệt vời!",
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/ui/sugoi.mp3"
+      }
+    },
+    {
+      "id": "ui_yatta",
+      "text": "やったー",
+      "vi": "Hoan hô!",
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/ui/yatta.mp3"
+      }
+    },
+    {
+      "id": "ui_iine",
+      "text": "いいね",
+      "vi": "Được đó!",
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/ui/iine.mp3"
+      }
+    },
+    {
+      "id": "ui_oshii",
+      "text": "おしい",
+      "vi": "Tiếc quá!",
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/ui/oshii.mp3"
+      }
+    },
+    {
+      "id": "ui_mouikkai",
+      "text": "もういっかい",
+      "vi": "Thử lại nào!",
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/ui/mouikkai.mp3"
+      }
+    },
+    {
+      "id": "ui_ganbatte",
+      "text": "がんばって",
+      "vi": "Cố lên!",
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/ui/ganbatte.mp3"
+      }
+    },
+    {
+      "id": "ui_konnichiwa",
+      "text": "こんにちは",
+      "vi": "Xin chào",
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/ui/konnichiwa.mp3"
+      }
+    },
+    {
+      "id": "ui_arigatou",
+      "text": "ありがとう",
+      "vi": "Cảm ơn",
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/ui/arigatou.mp3"
+      }
+    },
+    {
+      "id": "ui_ohayou",
+      "text": "おはよう",
+      "vi": "Chào buổi sáng",
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/ui/ohayou.mp3"
+      }
+    },
+    {
+      "id": "ui_oyasumi",
+      "text": "おやすみ",
+      "vi": "Chúc ngủ ngon",
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/ui/oyasumi.mp3"
+      }
+    },
+    {
+      "id": "ui_hajimeyou",
+      "text": "はじめよう",
+      "vi": "Bắt đầu nào!",
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/ui/hajimeyou.mp3"
+      }
+    },
+    {
+      "id": "ui_yoku_dekimashita",
+      "text": "よくできました",
+      "vi": "Con làm tốt lắm!",
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/ui/yoku_dekimashita.mp3"
+      }
+    }
+  ]
+}

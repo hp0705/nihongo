@@ -1,0 +1,650 @@
+{
+  "version": "0.1.0",
+  "note": "46 hiragana cơ bản. Chữ nào có trong lessons_ja.json thì app mới dạy. Thêm dakuten/yōon: thêm mục mới, char có thể gồm 2 ký tự (ví dụ きゃ), và các mục っ ー.",
+  "kana": [
+    {
+      "id": "h_a",
+      "char": "あ",
+      "romaji": "a",
+      "row": "a",
+      "stroke_count": 3,
+      "vi_hint": "a như \"a\" tiếng Việt",
+      "phase": 1,
+      "anchor_word_id": "w_ashi",
+      "audio": {
+        "normal": "assets/audio/ja/kana/a.mp3"
+      },
+      "lesson": "L1"
+    },
+    {
+      "id": "h_i",
+      "char": "い",
+      "romaji": "i",
+      "row": "a",
+      "stroke_count": 2,
+      "vi_hint": "i như \"i\"",
+      "phase": 1,
+      "anchor_word_id": "w_ika",
+      "audio": {
+        "normal": "assets/audio/ja/kana/i.mp3"
+      },
+      "lesson": "L1"
+    },
+    {
+      "id": "h_u",
+      "char": "う",
+      "romaji": "u",
+      "row": "a",
+      "stroke_count": 2,
+      "vi_hint": "u nhưng môi dẹt, không chu tròn",
+      "phase": 1,
+      "anchor_word_id": "w_ushi",
+      "audio": {
+        "normal": "assets/audio/ja/kana/u.mp3"
+      },
+      "lesson": "L1"
+    },
+    {
+      "id": "h_e",
+      "char": "え",
+      "romaji": "e",
+      "row": "a",
+      "stroke_count": 2,
+      "vi_hint": "ê",
+      "phase": 1,
+      "anchor_word_id": "w_eki",
+      "audio": {
+        "normal": "assets/audio/ja/kana/e.mp3"
+      },
+      "lesson": "L1"
+    },
+    {
+      "id": "h_o",
+      "char": "お",
+      "romaji": "o",
+      "row": "a",
+      "stroke_count": 3,
+      "vi_hint": "ô",
+      "phase": 1,
+      "anchor_word_id": "w_okashi",
+      "audio": {
+        "normal": "assets/audio/ja/kana/o.mp3"
+      },
+      "lesson": "L1"
+    },
+    {
+      "id": "h_ka",
+      "char": "か",
+      "romaji": "ka",
+      "row": "ka",
+      "stroke_count": 3,
+      "vi_hint": "ka như \"ca\"",
+      "phase": 1,
+      "anchor_word_id": "w_kasa",
+      "audio": {
+        "normal": "assets/audio/ja/kana/ka.mp3"
+      },
+      "lesson": "L2"
+    },
+    {
+      "id": "h_ki",
+      "char": "き",
+      "romaji": "ki",
+      "row": "ka",
+      "stroke_count": 4,
+      "vi_hint": "ki như \"ki\"",
+      "phase": 1,
+      "anchor_word_id": "w_ki",
+      "audio": {
+        "normal": "assets/audio/ja/kana/ki.mp3"
+      },
+      "lesson": "L2"
+    },
+    {
+      "id": "h_ku",
+      "char": "く",
+      "romaji": "ku",
+      "row": "ka",
+      "stroke_count": 1,
+      "vi_hint": "ku như \"cu\", môi dẹt",
+      "phase": 1,
+      "anchor_word_id": "w_kutsu",
+      "audio": {
+        "normal": "assets/audio/ja/kana/ku.mp3"
+      },
+      "lesson": "L2"
+    },
+    {
+      "id": "h_ke",
+      "char": "け",
+      "romaji": "ke",
+      "row": "ka",
+      "stroke_count": 3,
+      "vi_hint": "kê",
+      "phase": 1,
+      "anchor_word_id": "w_keito",
+      "audio": {
+        "normal": "assets/audio/ja/kana/ke.mp3"
+      },
+      "lesson": "L2"
+    },
+    {
+      "id": "h_ko",
+      "char": "こ",
+      "romaji": "ko",
+      "row": "ka",
+      "stroke_count": 2,
+      "vi_hint": "kô như \"cô\"",
+      "phase": 1,
+      "anchor_word_id": "w_koi",
+      "audio": {
+        "normal": "assets/audio/ja/kana/ko.mp3"
+      },
+      "lesson": "L2"
+    },
+    {
+      "id": "h_sa",
+      "char": "さ",
+      "romaji": "sa",
+      "row": "sa",
+      "stroke_count": 3,
+      "vi_hint": "sa",
+      "phase": 1,
+      "anchor_word_id": "w_sai",
+      "audio": {
+        "normal": "assets/audio/ja/kana/sa.mp3"
+      },
+      "lesson": "L3"
+    },
+    {
+      "id": "h_shi",
+      "char": "し",
+      "romaji": "shi",
+      "row": "sa",
+      "stroke_count": 1,
+      "vi_hint": "shi: âm giữa \"xi\" và \"si\", lưỡi hơi lùi",
+      "phase": 1,
+      "anchor_word_id": "w_shika",
+      "audio": {
+        "normal": "assets/audio/ja/kana/shi.mp3"
+      },
+      "lesson": "L3"
+    },
+    {
+      "id": "h_su",
+      "char": "す",
+      "romaji": "su",
+      "row": "sa",
+      "stroke_count": 2,
+      "vi_hint": "su, môi dẹt",
+      "phase": 1,
+      "anchor_word_id": "w_suika",
+      "audio": {
+        "normal": "assets/audio/ja/kana/su.mp3"
+      },
+      "lesson": "L3"
+    },
+    {
+      "id": "h_se",
+      "char": "せ",
+      "romaji": "se",
+      "row": "sa",
+      "stroke_count": 3,
+      "vi_hint": "sê",
+      "phase": 1,
+      "anchor_word_id": "w_sekai",
+      "audio": {
+        "normal": "assets/audio/ja/kana/se.mp3"
+      },
+      "lesson": "L3"
+    },
+    {
+      "id": "h_so",
+      "char": "そ",
+      "romaji": "so",
+      "row": "sa",
+      "stroke_count": 1,
+      "vi_hint": "sô",
+      "phase": 1,
+      "anchor_word_id": "w_soto",
+      "audio": {
+        "normal": "assets/audio/ja/kana/so.mp3"
+      },
+      "lesson": "L3"
+    },
+    {
+      "id": "h_ta",
+      "char": "た",
+      "romaji": "ta",
+      "row": "ta",
+      "stroke_count": 4,
+      "vi_hint": "ta",
+      "phase": 1,
+      "anchor_word_id": "w_tako",
+      "audio": {
+        "normal": "assets/audio/ja/kana/ta.mp3"
+      },
+      "lesson": "L4"
+    },
+    {
+      "id": "h_chi",
+      "char": "ち",
+      "romaji": "chi",
+      "row": "ta",
+      "stroke_count": 2,
+      "vi_hint": "chi như \"chi\"",
+      "phase": 1,
+      "anchor_word_id": "w_chichi",
+      "audio": {
+        "normal": "assets/audio/ja/kana/chi.mp3"
+      },
+      "lesson": "L4"
+    },
+    {
+      "id": "h_tsu",
+      "char": "つ",
+      "romaji": "tsu",
+      "row": "ta",
+      "stroke_count": 1,
+      "vi_hint": "tsu: \"t\" + \"su\", môi dẹt, không đọc \"tu\"",
+      "phase": 1,
+      "anchor_word_id": "w_tsuki",
+      "audio": {
+        "normal": "assets/audio/ja/kana/tsu.mp3"
+      },
+      "lesson": "L4"
+    },
+    {
+      "id": "h_te",
+      "char": "て",
+      "romaji": "te",
+      "row": "ta",
+      "stroke_count": 1,
+      "vi_hint": "tê",
+      "phase": 1,
+      "anchor_word_id": "w_te",
+      "audio": {
+        "normal": "assets/audio/ja/kana/te.mp3"
+      },
+      "lesson": "L4"
+    },
+    {
+      "id": "h_to",
+      "char": "と",
+      "romaji": "to",
+      "row": "ta",
+      "stroke_count": 2,
+      "vi_hint": "tô",
+      "phase": 1,
+      "anchor_word_id": "w_tokei",
+      "audio": {
+        "normal": "assets/audio/ja/kana/to.mp3"
+      },
+      "lesson": "L4"
+    },
+    {
+      "id": "h_na",
+      "char": "な",
+      "romaji": "na",
+      "row": "na",
+      "stroke_count": 4,
+      "vi_hint": "na",
+      "phase": 2,
+      "anchor_word_id": null,
+      "audio": {
+        "normal": "assets/audio/ja/kana/na.mp3"
+      },
+      "lesson": null
+    },
+    {
+      "id": "h_ni",
+      "char": "に",
+      "romaji": "ni",
+      "row": "na",
+      "stroke_count": 3,
+      "vi_hint": "ni",
+      "phase": 2,
+      "anchor_word_id": null,
+      "audio": {
+        "normal": "assets/audio/ja/kana/ni.mp3"
+      },
+      "lesson": null
+    },
+    {
+      "id": "h_nu",
+      "char": "ぬ",
+      "romaji": "nu",
+      "row": "na",
+      "stroke_count": 2,
+      "vi_hint": "nu",
+      "phase": 2,
+      "anchor_word_id": null,
+      "audio": {
+        "normal": "assets/audio/ja/kana/nu.mp3"
+      },
+      "lesson": null
+    },
+    {
+      "id": "h_ne",
+      "char": "ね",
+      "romaji": "ne",
+      "row": "na",
+      "stroke_count": 2,
+      "vi_hint": "nê",
+      "phase": 2,
+      "anchor_word_id": null,
+      "audio": {
+        "normal": "assets/audio/ja/kana/ne.mp3"
+      },
+      "lesson": null
+    },
+    {
+      "id": "h_no",
+      "char": "の",
+      "romaji": "no",
+      "row": "na",
+      "stroke_count": 1,
+      "vi_hint": "nô",
+      "phase": 2,
+      "anchor_word_id": null,
+      "audio": {
+        "normal": "assets/audio/ja/kana/no.mp3"
+      },
+      "lesson": null
+    },
+    {
+      "id": "h_ha",
+      "char": "は",
+      "romaji": "ha",
+      "row": "ha",
+      "stroke_count": 3,
+      "vi_hint": "ha (làm trợ từ thì đọc \"wa\")",
+      "phase": 2,
+      "anchor_word_id": null,
+      "audio": {
+        "normal": "assets/audio/ja/kana/ha.mp3"
+      },
+      "lesson": null
+    },
+    {
+      "id": "h_hi",
+      "char": "ひ",
+      "romaji": "hi",
+      "row": "ha",
+      "stroke_count": 1,
+      "vi_hint": "hi",
+      "phase": 2,
+      "anchor_word_id": null,
+      "audio": {
+        "normal": "assets/audio/ja/kana/hi.mp3"
+      },
+      "lesson": null
+    },
+    {
+      "id": "h_fu",
+      "char": "ふ",
+      "romaji": "fu",
+      "row": "ha",
+      "stroke_count": 4,
+      "vi_hint": "fu: thổi nhẹ giữa \"hu\" và \"phu\"",
+      "phase": 2,
+      "anchor_word_id": null,
+      "audio": {
+        "normal": "assets/audio/ja/kana/fu.mp3"
+      },
+      "lesson": null
+    },
+    {
+      "id": "h_he",
+      "char": "へ",
+      "romaji": "he",
+      "row": "ha",
+      "stroke_count": 1,
+      "vi_hint": "hê (làm trợ từ thì đọc \"ê\")",
+      "phase": 2,
+      "anchor_word_id": null,
+      "audio": {
+        "normal": "assets/audio/ja/kana/he.mp3"
+      },
+      "lesson": null
+    },
+    {
+      "id": "h_ho",
+      "char": "ほ",
+      "romaji": "ho",
+      "row": "ha",
+      "stroke_count": 4,
+      "vi_hint": "hô",
+      "phase": 2,
+      "anchor_word_id": null,
+      "audio": {
+        "normal": "assets/audio/ja/kana/ho.mp3"
+      },
+      "lesson": null
+    },
+    {
+      "id": "h_ma",
+      "char": "ま",
+      "romaji": "ma",
+      "row": "ma",
+      "stroke_count": 3,
+      "vi_hint": "ma",
+      "phase": 2,
+      "anchor_word_id": null,
+      "audio": {
+        "normal": "assets/audio/ja/kana/ma.mp3"
+      },
+      "lesson": null
+    },
+    {
+      "id": "h_mi",
+      "char": "み",
+      "romaji": "mi",
+      "row": "ma",
+      "stroke_count": 2,
+      "vi_hint": "mi",
+      "phase": 2,
+      "anchor_word_id": null,
+      "audio": {
+        "normal": "assets/audio/ja/kana/mi.mp3"
+      },
+      "lesson": null
+    },
+    {
+      "id": "h_mu",
+      "char": "む",
+      "romaji": "mu",
+      "row": "ma",
+      "stroke_count": 3,
+      "vi_hint": "mu",
+      "phase": 2,
+      "anchor_word_id": null,
+      "audio": {
+        "normal": "assets/audio/ja/kana/mu.mp3"
+      },
+      "lesson": null
+    },
+    {
+      "id": "h_me",
+      "char": "め",
+      "romaji": "me",
+      "row": "ma",
+      "stroke_count": 2,
+      "vi_hint": "mê",
+      "phase": 2,
+      "anchor_word_id": null,
+      "audio": {
+        "normal": "assets/audio/ja/kana/me.mp3"
+      },
+      "lesson": null
+    },
+    {
+      "id": "h_mo",
+      "char": "も",
+      "romaji": "mo",
+      "row": "ma",
+      "stroke_count": 3,
+      "vi_hint": "mô",
+      "phase": 2,
+      "anchor_word_id": null,
+      "audio": {
+        "normal": "assets/audio/ja/kana/mo.mp3"
+      },
+      "lesson": null
+    },
+    {
+      "id": "h_ya",
+      "char": "や",
+      "romaji": "ya",
+      "row": "ya",
+      "stroke_count": 3,
+      "vi_hint": "ya như \"ia\" trong \"gia\"",
+      "phase": 2,
+      "anchor_word_id": null,
+      "audio": {
+        "normal": "assets/audio/ja/kana/ya.mp3"
+      },
+      "lesson": null
+    },
+    {
+      "id": "h_yu",
+      "char": "ゆ",
+      "romaji": "yu",
+      "row": "ya",
+      "stroke_count": 2,
+      "vi_hint": "yu",
+      "phase": 2,
+      "anchor_word_id": null,
+      "audio": {
+        "normal": "assets/audio/ja/kana/yu.mp3"
+      },
+      "lesson": null
+    },
+    {
+      "id": "h_yo",
+      "char": "よ",
+      "romaji": "yo",
+      "row": "ya",
+      "stroke_count": 2,
+      "vi_hint": "yô",
+      "phase": 2,
+      "anchor_word_id": null,
+      "audio": {
+        "normal": "assets/audio/ja/kana/yo.mp3"
+      },
+      "lesson": null
+    },
+    {
+      "id": "h_ra",
+      "char": "ら",
+      "romaji": "ra",
+      "row": "ra",
+      "stroke_count": 2,
+      "vi_hint": "ra: lưỡi chạm nhẹ, giữa \"r\" và \"l\"",
+      "phase": 2,
+      "anchor_word_id": null,
+      "audio": {
+        "normal": "assets/audio/ja/kana/ra.mp3"
+      },
+      "lesson": null
+    },
+    {
+      "id": "h_ri",
+      "char": "り",
+      "romaji": "ri",
+      "row": "ra",
+      "stroke_count": 2,
+      "vi_hint": "ri",
+      "phase": 2,
+      "anchor_word_id": null,
+      "audio": {
+        "normal": "assets/audio/ja/kana/ri.mp3"
+      },
+      "lesson": null
+    },
+    {
+      "id": "h_ru",
+      "char": "る",
+      "romaji": "ru",
+      "row": "ra",
+      "stroke_count": 1,
+      "vi_hint": "ru",
+      "phase": 2,
+      "anchor_word_id": null,
+      "audio": {
+        "normal": "assets/audio/ja/kana/ru.mp3"
+      },
+      "lesson": null
+    },
+    {
+      "id": "h_re",
+      "char": "れ",
+      "romaji": "re",
+      "row": "ra",
+      "stroke_count": 2,
+      "vi_hint": "rê",
+      "phase": 2,
+      "anchor_word_id": null,
+      "audio": {
+        "normal": "assets/audio/ja/kana/re.mp3"
+      },
+      "lesson": null
+    },
+    {
+      "id": "h_ro",
+      "char": "ろ",
+      "romaji": "ro",
+      "row": "ra",
+      "stroke_count": 1,
+      "vi_hint": "rô",
+      "phase": 2,
+      "anchor_word_id": null,
+      "audio": {
+        "normal": "assets/audio/ja/kana/ro.mp3"
+      },
+      "lesson": null
+    },
+    {
+      "id": "h_wa",
+      "char": "わ",
+      "romaji": "wa",
+      "row": "wa",
+      "stroke_count": 2,
+      "vi_hint": "oa / wa",
+      "phase": 2,
+      "anchor_word_id": null,
+      "audio": {
+        "normal": "assets/audio/ja/kana/wa.mp3"
+      },
+      "lesson": null
+    },
+    {
+      "id": "h_wo",
+      "char": "を",
+      "romaji": "wo",
+      "row": "wa",
+      "stroke_count": 3,
+      "vi_hint": "ô (chỉ dùng làm trợ từ)",
+      "phase": 2,
+      "anchor_word_id": null,
+      "audio": {
+        "normal": "assets/audio/ja/kana/wo.mp3"
+      },
+      "lesson": null
+    },
+    {
+      "id": "h_n",
+      "char": "ん",
+      "romaji": "n",
+      "row": "wa",
+      "stroke_count": 1,
+      "vi_hint": "n/ng cuối âm, thở qua mũi",
+      "phase": 2,
+      "anchor_word_id": null,
+      "audio": {
+        "normal": "assets/audio/ja/kana/n.mp3"
+      },
+      "lesson": null
+    }
+  ]
+}

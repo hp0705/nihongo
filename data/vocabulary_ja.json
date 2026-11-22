@@ -1,0 +1,961 @@
+{
+  "version": "0.1.0",
+  "note": "Từ vựng. Từ chỉ được mở khoá khi mọi chữ của nó đã học (unlock_lesson do scripts/validate_content.py --fix tự tính). accent để trống cho đến khi kiểm tra bằng từ điển trọng âm NHK/OJAD.",
+  "words": [
+    {
+      "id": "w_ashi",
+      "word": "あし",
+      "kanji": "足",
+      "romaji": "ashi",
+      "vi": "cái chân",
+      "emoji": "🦶",
+      "category": "co_the",
+      "needs_custom_art": false,
+      "accent": null,
+      "note_vi": null,
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/words/ashi.mp3",
+        "slow": "assets/audio/ja/words/ashi_slow.mp3"
+      },
+      "kana_ids": [
+        "h_a",
+        "h_shi"
+      ],
+      "unlock_lesson": "L3"
+    },
+    {
+      "id": "w_ika",
+      "word": "いか",
+      "kanji": "烏賊",
+      "romaji": "ika",
+      "vi": "con mực ống",
+      "emoji": "🦑",
+      "category": "dong_vat",
+      "needs_custom_art": false,
+      "accent": null,
+      "note_vi": null,
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/words/ika.mp3",
+        "slow": "assets/audio/ja/words/ika_slow.mp3"
+      },
+      "kana_ids": [
+        "h_i",
+        "h_ka"
+      ],
+      "unlock_lesson": "L2"
+    },
+    {
+      "id": "w_ushi",
+      "word": "うし",
+      "kanji": "牛",
+      "romaji": "ushi",
+      "vi": "con bò",
+      "emoji": "🐄",
+      "category": "dong_vat",
+      "needs_custom_art": false,
+      "accent": null,
+      "note_vi": null,
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/words/ushi.mp3",
+        "slow": "assets/audio/ja/words/ushi_slow.mp3"
+      },
+      "kana_ids": [
+        "h_u",
+        "h_shi"
+      ],
+      "unlock_lesson": "L3"
+    },
+    {
+      "id": "w_eki",
+      "word": "えき",
+      "kanji": "駅",
+      "romaji": "eki",
+      "vi": "nhà ga",
+      "emoji": "🚉",
+      "category": "dia_diem",
+      "needs_custom_art": false,
+      "accent": null,
+      "note_vi": null,
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/words/eki.mp3",
+        "slow": "assets/audio/ja/words/eki_slow.mp3"
+      },
+      "kana_ids": [
+        "h_e",
+        "h_ki"
+      ],
+      "unlock_lesson": "L2"
+    },
+    {
+      "id": "w_okashi",
+      "word": "おかし",
+      "kanji": "お菓子",
+      "romaji": "okashi",
+      "vi": "bánh kẹo",
+      "emoji": "🍬",
+      "category": "do_an",
+      "needs_custom_art": false,
+      "accent": null,
+      "note_vi": null,
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/words/okashi.mp3",
+        "slow": "assets/audio/ja/words/okashi_slow.mp3"
+      },
+      "kana_ids": [
+        "h_o",
+        "h_ka",
+        "h_shi"
+      ],
+      "unlock_lesson": "L3"
+    },
+    {
+      "id": "w_kasa",
+      "word": "かさ",
+      "kanji": "傘",
+      "romaji": "kasa",
+      "vi": "cái ô",
+      "emoji": "☂️",
+      "category": "do_vat",
+      "needs_custom_art": false,
+      "accent": null,
+      "note_vi": null,
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/words/kasa.mp3",
+        "slow": "assets/audio/ja/words/kasa_slow.mp3"
+      },
+      "kana_ids": [
+        "h_ka",
+        "h_sa"
+      ],
+      "unlock_lesson": "L3"
+    },
+    {
+      "id": "w_ki",
+      "word": "き",
+      "kanji": "木",
+      "romaji": "ki",
+      "vi": "cái cây",
+      "emoji": "🌳",
+      "category": "thien_nhien",
+      "needs_custom_art": false,
+      "accent": null,
+      "note_vi": null,
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/words/ki.mp3",
+        "slow": "assets/audio/ja/words/ki_slow.mp3"
+      },
+      "kana_ids": [
+        "h_ki"
+      ],
+      "unlock_lesson": "L2"
+    },
+    {
+      "id": "w_kutsu",
+      "word": "くつ",
+      "kanji": "靴",
+      "romaji": "kutsu",
+      "vi": "giày",
+      "emoji": "👟",
+      "category": "do_vat",
+      "needs_custom_art": false,
+      "accent": null,
+      "note_vi": null,
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/words/kutsu.mp3",
+        "slow": "assets/audio/ja/words/kutsu_slow.mp3"
+      },
+      "kana_ids": [
+        "h_ku",
+        "h_tsu"
+      ],
+      "unlock_lesson": "L4"
+    },
+    {
+      "id": "w_keito",
+      "word": "けいと",
+      "kanji": "毛糸",
+      "romaji": "keito",
+      "vi": "len (sợi len)",
+      "emoji": "🧶",
+      "category": "do_vat",
+      "needs_custom_art": false,
+      "accent": null,
+      "note_vi": null,
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/words/keito.mp3",
+        "slow": "assets/audio/ja/words/keito_slow.mp3"
+      },
+      "kana_ids": [
+        "h_ke",
+        "h_i",
+        "h_to"
+      ],
+      "unlock_lesson": "L4"
+    },
+    {
+      "id": "w_koi",
+      "word": "こい",
+      "kanji": "鯉",
+      "romaji": "koi",
+      "vi": "cá chép koi",
+      "emoji": "🎏",
+      "category": "dong_vat",
+      "needs_custom_art": true,
+      "accent": null,
+      "note_vi": null,
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/words/koi.mp3",
+        "slow": "assets/audio/ja/words/koi_slow.mp3"
+      },
+      "kana_ids": [
+        "h_ko",
+        "h_i"
+      ],
+      "unlock_lesson": "L2"
+    },
+    {
+      "id": "w_sai",
+      "word": "さい",
+      "kanji": "犀",
+      "romaji": "sai",
+      "vi": "con tê giác",
+      "emoji": "🦏",
+      "category": "dong_vat",
+      "needs_custom_art": false,
+      "accent": null,
+      "note_vi": null,
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/words/sai.mp3",
+        "slow": "assets/audio/ja/words/sai_slow.mp3"
+      },
+      "kana_ids": [
+        "h_sa",
+        "h_i"
+      ],
+      "unlock_lesson": "L3"
+    },
+    {
+      "id": "w_shika",
+      "word": "しか",
+      "kanji": "鹿",
+      "romaji": "shika",
+      "vi": "con hươu",
+      "emoji": "🦌",
+      "category": "dong_vat",
+      "needs_custom_art": false,
+      "accent": null,
+      "note_vi": null,
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/words/shika.mp3",
+        "slow": "assets/audio/ja/words/shika_slow.mp3"
+      },
+      "kana_ids": [
+        "h_shi",
+        "h_ka"
+      ],
+      "unlock_lesson": "L3"
+    },
+    {
+      "id": "w_suika",
+      "word": "すいか",
+      "kanji": "西瓜",
+      "romaji": "suika",
+      "vi": "dưa hấu",
+      "emoji": "🍉",
+      "category": "do_an",
+      "needs_custom_art": false,
+      "accent": null,
+      "note_vi": null,
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/words/suika.mp3",
+        "slow": "assets/audio/ja/words/suika_slow.mp3"
+      },
+      "kana_ids": [
+        "h_su",
+        "h_i",
+        "h_ka"
+      ],
+      "unlock_lesson": "L3"
+    },
+    {
+      "id": "w_sekai",
+      "word": "せかい",
+      "kanji": "世界",
+      "romaji": "sekai",
+      "vi": "thế giới",
+      "emoji": "🌏",
+      "category": "thien_nhien",
+      "needs_custom_art": false,
+      "accent": null,
+      "note_vi": null,
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/words/sekai.mp3",
+        "slow": "assets/audio/ja/words/sekai_slow.mp3"
+      },
+      "kana_ids": [
+        "h_se",
+        "h_ka",
+        "h_i"
+      ],
+      "unlock_lesson": "L3"
+    },
+    {
+      "id": "w_soto",
+      "word": "そと",
+      "kanji": "外",
+      "romaji": "soto",
+      "vi": "bên ngoài",
+      "emoji": "🚪",
+      "category": "vi_tri",
+      "needs_custom_art": true,
+      "accent": null,
+      "note_vi": null,
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/words/soto.mp3",
+        "slow": "assets/audio/ja/words/soto_slow.mp3"
+      },
+      "kana_ids": [
+        "h_so",
+        "h_to"
+      ],
+      "unlock_lesson": "L4"
+    },
+    {
+      "id": "w_tako",
+      "word": "たこ",
+      "kanji": "蛸",
+      "romaji": "tako",
+      "vi": "bạch tuộc",
+      "emoji": "🐙",
+      "category": "dong_vat",
+      "needs_custom_art": false,
+      "accent": null,
+      "note_vi": null,
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/words/tako.mp3",
+        "slow": "assets/audio/ja/words/tako_slow.mp3"
+      },
+      "kana_ids": [
+        "h_ta",
+        "h_ko"
+      ],
+      "unlock_lesson": "L4"
+    },
+    {
+      "id": "w_chichi",
+      "word": "ちち",
+      "kanji": "父",
+      "romaji": "chichi",
+      "vi": "bố (của mình)",
+      "emoji": "👨",
+      "category": "gia_dinh",
+      "needs_custom_art": true,
+      "accent": null,
+      "note_vi": null,
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/words/chichi.mp3",
+        "slow": "assets/audio/ja/words/chichi_slow.mp3"
+      },
+      "kana_ids": [
+        "h_chi",
+        "h_chi"
+      ],
+      "unlock_lesson": "L4"
+    },
+    {
+      "id": "w_tsuki",
+      "word": "つき",
+      "kanji": "月",
+      "romaji": "tsuki",
+      "vi": "mặt trăng",
+      "emoji": "🌙",
+      "category": "thien_nhien",
+      "needs_custom_art": false,
+      "accent": null,
+      "note_vi": null,
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/words/tsuki.mp3",
+        "slow": "assets/audio/ja/words/tsuki_slow.mp3"
+      },
+      "kana_ids": [
+        "h_tsu",
+        "h_ki"
+      ],
+      "unlock_lesson": "L4"
+    },
+    {
+      "id": "w_te",
+      "word": "て",
+      "kanji": "手",
+      "romaji": "te",
+      "vi": "bàn tay",
+      "emoji": "✋",
+      "category": "co_the",
+      "needs_custom_art": false,
+      "accent": null,
+      "note_vi": null,
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/words/te.mp3",
+        "slow": "assets/audio/ja/words/te_slow.mp3"
+      },
+      "kana_ids": [
+        "h_te"
+      ],
+      "unlock_lesson": "L4"
+    },
+    {
+      "id": "w_tokei",
+      "word": "とけい",
+      "kanji": "時計",
+      "romaji": "tokei",
+      "vi": "đồng hồ",
+      "emoji": "⏰",
+      "category": "do_vat",
+      "needs_custom_art": false,
+      "accent": null,
+      "note_vi": null,
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/words/tokei.mp3",
+        "slow": "assets/audio/ja/words/tokei_slow.mp3"
+      },
+      "kana_ids": [
+        "h_to",
+        "h_ke",
+        "h_i"
+      ],
+      "unlock_lesson": "L4"
+    },
+    {
+      "id": "w_ie",
+      "word": "いえ",
+      "kanji": "家",
+      "romaji": "ie",
+      "vi": "ngôi nhà",
+      "emoji": "🏠",
+      "category": "dia_diem",
+      "needs_custom_art": false,
+      "accent": null,
+      "note_vi": null,
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/words/ie.mp3",
+        "slow": "assets/audio/ja/words/ie_slow.mp3"
+      },
+      "kana_ids": [
+        "h_i",
+        "h_e"
+      ],
+      "unlock_lesson": "L1"
+    },
+    {
+      "id": "w_iie",
+      "word": "いいえ",
+      "kanji": "",
+      "romaji": "iie",
+      "vi": "không (trả lời)",
+      "emoji": "🙅",
+      "category": "giao_tiep",
+      "needs_custom_art": true,
+      "accent": null,
+      "note_vi": null,
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/words/iie.mp3",
+        "slow": "assets/audio/ja/words/iie_slow.mp3"
+      },
+      "kana_ids": [
+        "h_i",
+        "h_i",
+        "h_e"
+      ],
+      "unlock_lesson": "L1"
+    },
+    {
+      "id": "w_ai",
+      "word": "あい",
+      "kanji": "愛",
+      "romaji": "ai",
+      "vi": "tình yêu",
+      "emoji": "💕",
+      "category": "cam_xuc",
+      "needs_custom_art": true,
+      "accent": null,
+      "note_vi": null,
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/words/ai.mp3",
+        "slow": "assets/audio/ja/words/ai_slow.mp3"
+      },
+      "kana_ids": [
+        "h_a",
+        "h_i"
+      ],
+      "unlock_lesson": "L1"
+    },
+    {
+      "id": "w_aka",
+      "word": "あか",
+      "kanji": "赤",
+      "romaji": "aka",
+      "vi": "màu đỏ",
+      "emoji": "🔴",
+      "category": "mau_sac",
+      "needs_custom_art": false,
+      "accent": null,
+      "note_vi": null,
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/words/aka.mp3",
+        "slow": "assets/audio/ja/words/aka_slow.mp3"
+      },
+      "kana_ids": [
+        "h_a",
+        "h_ka"
+      ],
+      "unlock_lesson": "L2"
+    },
+    {
+      "id": "w_ao",
+      "word": "あお",
+      "kanji": "青",
+      "romaji": "ao",
+      "vi": "màu xanh dương",
+      "emoji": "🔵",
+      "category": "mau_sac",
+      "needs_custom_art": false,
+      "accent": null,
+      "note_vi": null,
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/words/ao.mp3",
+        "slow": "assets/audio/ja/words/ao_slow.mp3"
+      },
+      "kana_ids": [
+        "h_a",
+        "h_o"
+      ],
+      "unlock_lesson": "L1"
+    },
+    {
+      "id": "w_asa",
+      "word": "あさ",
+      "kanji": "朝",
+      "romaji": "asa",
+      "vi": "buổi sáng",
+      "emoji": "🌅",
+      "category": "thoi_gian",
+      "needs_custom_art": true,
+      "accent": null,
+      "note_vi": null,
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/words/asa.mp3",
+        "slow": "assets/audio/ja/words/asa_slow.mp3"
+      },
+      "kana_ids": [
+        "h_a",
+        "h_sa"
+      ],
+      "unlock_lesson": "L3"
+    },
+    {
+      "id": "w_isu",
+      "word": "いす",
+      "kanji": "椅子",
+      "romaji": "isu",
+      "vi": "cái ghế",
+      "emoji": "🪑",
+      "category": "do_vat",
+      "needs_custom_art": false,
+      "accent": null,
+      "note_vi": null,
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/words/isu.mp3",
+        "slow": "assets/audio/ja/words/isu_slow.mp3"
+      },
+      "kana_ids": [
+        "h_i",
+        "h_su"
+      ],
+      "unlock_lesson": "L3"
+    },
+    {
+      "id": "w_uta",
+      "word": "うた",
+      "kanji": "歌",
+      "romaji": "uta",
+      "vi": "bài hát",
+      "emoji": "🎵",
+      "category": "am_nhac",
+      "needs_custom_art": false,
+      "accent": null,
+      "note_vi": null,
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/words/uta.mp3",
+        "slow": "assets/audio/ja/words/uta_slow.mp3"
+      },
+      "kana_ids": [
+        "h_u",
+        "h_ta"
+      ],
+      "unlock_lesson": "L4"
+    },
+    {
+      "id": "w_kao",
+      "word": "かお",
+      "kanji": "顔",
+      "romaji": "kao",
+      "vi": "khuôn mặt",
+      "emoji": "🙂",
+      "category": "co_the",
+      "needs_custom_art": false,
+      "accent": null,
+      "note_vi": null,
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/words/kao.mp3",
+        "slow": "assets/audio/ja/words/kao_slow.mp3"
+      },
+      "kana_ids": [
+        "h_ka",
+        "h_o"
+      ],
+      "unlock_lesson": "L2"
+    },
+    {
+      "id": "w_kuchi",
+      "word": "くち",
+      "kanji": "口",
+      "romaji": "kuchi",
+      "vi": "cái miệng",
+      "emoji": "👄",
+      "category": "co_the",
+      "needs_custom_art": false,
+      "accent": null,
+      "note_vi": null,
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/words/kuchi.mp3",
+        "slow": "assets/audio/ja/words/kuchi_slow.mp3"
+      },
+      "kana_ids": [
+        "h_ku",
+        "h_chi"
+      ],
+      "unlock_lesson": "L4"
+    },
+    {
+      "id": "w_shio",
+      "word": "しお",
+      "kanji": "塩",
+      "romaji": "shio",
+      "vi": "muối",
+      "emoji": "🧂",
+      "category": "do_an",
+      "needs_custom_art": false,
+      "accent": null,
+      "note_vi": null,
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/words/shio.mp3",
+        "slow": "assets/audio/ja/words/shio_slow.mp3"
+      },
+      "kana_ids": [
+        "h_shi",
+        "h_o"
+      ],
+      "unlock_lesson": "L3"
+    },
+    {
+      "id": "w_sushi",
+      "word": "すし",
+      "kanji": "寿司",
+      "romaji": "sushi",
+      "vi": "sushi",
+      "emoji": "🍣",
+      "category": "do_an",
+      "needs_custom_art": false,
+      "accent": null,
+      "note_vi": null,
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/words/sushi.mp3",
+        "slow": "assets/audio/ja/words/sushi_slow.mp3"
+      },
+      "kana_ids": [
+        "h_su",
+        "h_shi"
+      ],
+      "unlock_lesson": "L3"
+    },
+    {
+      "id": "w_taiko",
+      "word": "たいこ",
+      "kanji": "太鼓",
+      "romaji": "taiko",
+      "vi": "cái trống taiko",
+      "emoji": "🥁",
+      "category": "am_nhac",
+      "needs_custom_art": false,
+      "accent": null,
+      "note_vi": null,
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/words/taiko.mp3",
+        "slow": "assets/audio/ja/words/taiko_slow.mp3"
+      },
+      "kana_ids": [
+        "h_ta",
+        "h_i",
+        "h_ko"
+      ],
+      "unlock_lesson": "L4"
+    },
+    {
+      "id": "w_ashita",
+      "word": "あした",
+      "kanji": "明日",
+      "romaji": "ashita",
+      "vi": "ngày mai",
+      "emoji": "📅",
+      "category": "thoi_gian",
+      "needs_custom_art": true,
+      "accent": null,
+      "note_vi": null,
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/words/ashita.mp3",
+        "slow": "assets/audio/ja/words/ashita_slow.mp3"
+      },
+      "kana_ids": [
+        "h_a",
+        "h_shi",
+        "h_ta"
+      ],
+      "unlock_lesson": "L4"
+    },
+    {
+      "id": "w_oishii",
+      "word": "おいしい",
+      "kanji": "美味しい",
+      "romaji": "oishii",
+      "vi": "ngon",
+      "emoji": "😋",
+      "category": "tinh_tu",
+      "needs_custom_art": false,
+      "accent": null,
+      "note_vi": null,
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/words/oishii.mp3",
+        "slow": "assets/audio/ja/words/oishii_slow.mp3"
+      },
+      "kana_ids": [
+        "h_o",
+        "h_i",
+        "h_shi",
+        "h_i"
+      ],
+      "unlock_lesson": "L3"
+    },
+    {
+      "id": "w_suki",
+      "word": "すき",
+      "kanji": "好き",
+      "romaji": "suki",
+      "vi": "thích",
+      "emoji": "❤️",
+      "category": "tinh_tu",
+      "needs_custom_art": true,
+      "accent": null,
+      "note_vi": null,
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/words/suki.mp3",
+        "slow": "assets/audio/ja/words/suki_slow.mp3"
+      },
+      "kana_ids": [
+        "h_su",
+        "h_ki"
+      ],
+      "unlock_lesson": "L3"
+    },
+    {
+      "id": "w_ike",
+      "word": "いけ",
+      "kanji": "池",
+      "romaji": "ike",
+      "vi": "cái ao",
+      "emoji": "🏞️",
+      "category": "thien_nhien",
+      "needs_custom_art": false,
+      "accent": null,
+      "note_vi": null,
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/words/ike.mp3",
+        "slow": "assets/audio/ja/words/ike_slow.mp3"
+      },
+      "kana_ids": [
+        "h_i",
+        "h_ke"
+      ],
+      "unlock_lesson": "L2"
+    },
+    {
+      "id": "w_koe",
+      "word": "こえ",
+      "kanji": "声",
+      "romaji": "koe",
+      "vi": "giọng nói",
+      "emoji": "🗣️",
+      "category": "co_the",
+      "needs_custom_art": true,
+      "accent": null,
+      "note_vi": null,
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/words/koe.mp3",
+        "slow": "assets/audio/ja/words/koe_slow.mp3"
+      },
+      "kana_ids": [
+        "h_ko",
+        "h_e"
+      ],
+      "unlock_lesson": "L2"
+    },
+    {
+      "id": "w_ue",
+      "word": "うえ",
+      "kanji": "上",
+      "romaji": "ue",
+      "vi": "phía trên",
+      "emoji": "⬆️",
+      "category": "vi_tri",
+      "needs_custom_art": true,
+      "accent": null,
+      "note_vi": null,
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/words/ue.mp3",
+        "slow": "assets/audio/ja/words/ue_slow.mp3"
+      },
+      "kana_ids": [
+        "h_u",
+        "h_e"
+      ],
+      "unlock_lesson": "L1"
+    },
+    {
+      "id": "w_shita",
+      "word": "した",
+      "kanji": "下",
+      "romaji": "shita",
+      "vi": "phía dưới",
+      "emoji": "⬇️",
+      "category": "vi_tri",
+      "needs_custom_art": true,
+      "accent": null,
+      "note_vi": null,
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/words/shita.mp3",
+        "slow": "assets/audio/ja/words/shita_slow.mp3"
+      },
+      "kana_ids": [
+        "h_shi",
+        "h_ta"
+      ],
+      "unlock_lesson": "L4"
+    },
+    {
+      "id": "w_kusa",
+      "word": "くさ",
+      "kanji": "草",
+      "romaji": "kusa",
+      "vi": "cỏ",
+      "emoji": "🌱",
+      "category": "thien_nhien",
+      "needs_custom_art": false,
+      "accent": null,
+      "note_vi": null,
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/words/kusa.mp3",
+        "slow": "assets/audio/ja/words/kusa_slow.mp3"
+      },
+      "kana_ids": [
+        "h_ku",
+        "h_sa"
+      ],
+      "unlock_lesson": "L3"
+    },
+    {
+      "id": "w_take",
+      "word": "たけ",
+      "kanji": "竹",
+      "romaji": "take",
+      "vi": "cây tre",
+      "emoji": "🎋",
+      "category": "thien_nhien",
+      "needs_custom_art": false,
+      "accent": null,
+      "note_vi": null,
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/words/take.mp3",
+        "slow": "assets/audio/ja/words/take_slow.mp3"
+      },
+      "kana_ids": [
+        "h_ta",
+        "h_ke"
+      ],
+      "unlock_lesson": "L4"
+    },
+    {
+      "id": "w_shikaku",
+      "word": "しかく",
+      "kanji": "四角",
+      "romaji": "shikaku",
+      "vi": "hình vuông",
+      "emoji": "🟦",
+      "category": "hinh_dang",
+      "needs_custom_art": false,
+      "accent": null,
+      "note_vi": null,
+      "tts_text": null,
+      "audio": {
+        "normal": "assets/audio/ja/words/shikaku.mp3",
+        "slow": "assets/audio/ja/words/shikaku_slow.mp3"
+      },
+      "kana_ids": [
+        "h_shi",
+        "h_ka",
+        "h_ku"
+      ],
+      "unlock_lesson": "L3"
+    }
+  ]
+}

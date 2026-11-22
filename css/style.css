@@ -1,0 +1,1810 @@
+/**
+ * css/style.css
+ * Giao diện Nihongo Adventure - Chuyến tàu Shinkansen của Bé Mây
+ * Thiết kế cho trẻ nhỏ (4-7 tuổi): nút to, màu sáng, tương phản cao, phông chữ tròn thân thiện.
+ */
+
+:root {
+  --font-kana: 'Zen Maru Gothic', 'M PLUS Rounded 1c', 'Hiragino Maru Gothic ProN', 'Yu Gothic', sans-serif;
+  --font-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+  /* Bảng màu rực rỡ, tích cực */
+  --color-primary: #0284c7;
+  --color-primary-light: #38bdf8;
+  --color-primary-dark: #0369a1;
+  --color-accent-pink: #ec4899;
+  --color-accent-green: #10b981;
+  --color-accent-yellow: #f59e0b;
+  --color-accent-purple: #8b5cf6;
+  --color-bg-sky: #f0f9ff;
+  --color-card-bg: #ffffff;
+  --color-text-main: #1e293b;
+  --color-text-muted: #64748b;
+
+  --min-touch-target: 64px;
+  --touch-gap: 12px;
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-sm: 10px;
+
+  --shadow-soft: 0 10px 25px -5px rgba(2, 132, 199, 0.15), 0 8px 10px -6px rgba(2, 132, 199, 0.1);
+  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-btn: 0 6px 0 #0369a1;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+body {
+  font-family: var(--font-system);
+  background: linear-gradient(180deg, #e0f2fe 0%, #f0fdf4 100%);
+  color: var(--color-text-main);
+  min-height: 100vh;
+  overflow-x: hidden;
+  touch-action: manipulation;
+}
+
+#app {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ========================================================
+   CÁC THÀNH PHẦN CHUNG: BUTTONS, MODALS, HEADERS
+   ======================================================== */
+
+button {
+  font-family: inherit;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: transform 0.1s ease, filter 0.15s ease;
+}
+
+button:active {
+  transform: scale(0.96);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+  color: #ffffff;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.4);
+  font-size: 1.15rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-secondary {
+  background: #ffffff;
+  color: var(--color-primary-dark);
+  border: 2px solid #bae6fd;
+  font-weight: 700;
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  font-size: 1.05rem;
+}
+
+.btn-danger {
+  background: #ef4444;
+  color: #ffffff;
+  font-weight: 700;
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+}
+
+.btn-back-circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(--color-primary-dark);
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-card);
+  border: 2px solid #e2e8f0;
+}
+
+/* ========================================================
+   MÀN HÌNH KHỞI ĐỘNG (START SCREEN)
+   ======================================================== */
+
+.screen-start {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: 24px;
+  text-align: center;
+}
+
+.start-content {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  padding: 40px 32px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  max-width: 500px;
+  width: 100%;
+}
+
+.start-title {
+  font-size: 2.2rem;
+  color: var(--color-primary-dark);
+  margin-top: 16px;
+  font-weight: 900;
+}
+
+.start-subtitle {
+  font-size: 1.2rem;
+  color: var(--color-text-muted);
+  margin: 8px 0 32px;
+}
+
+.btn-start-huge {
+  width: 100%;
+  min-height: 90px;
+  background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);
+  color: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: 16px 24px;
+  box-shadow: 0 8px 24px rgba(234, 88, 12, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.start-btn-ja {
+  font-family: var(--font-kana);
+  font-size: 2.2rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.start-btn-vi {
+  font-size: 1.15rem;
+  opacity: 0.95;
+  font-weight: 600;
+}
+
+.start-hint {
+  margin-top: 20px;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+}
+
+/* ========================================================
+   MÀN HÌNH CHÍNH (HOME / RAILWAY MAP)
+   ======================================================== */
+
+.screen-home {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 16px;
+  gap: 16px;
+}
+
+.home-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-rank-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
+  padding: 8px 16px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
+
+.rank-emoji {
+  font-size: 2rem;
+}
+
+.rank-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.rank-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+}
+
+.rank-bar-bg {
+  width: 90px;
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.rank-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #38bdf8, #0284c7);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.header-stats {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stat-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  padding: 8px 14px;
+  border-radius: 20px;
+  box-shadow: var(--shadow-card);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.star-pill {
+  color: #d97706;
+}
+
+.streak-pill {
+  color: #dc2626;
+}
+
+.btn-parent-gate {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #ffffff;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-card);
+  border: 1px solid #e2e8f0;
+}
+
+/* Khung Chào & Nhiệm Vụ */
+.mascot-mission-banner {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+@media (min-width: 600px) {
+  .mascot-mission-banner {
+    flex-direction: row;
+    align-items: stretch;
+  }
+}
+
+.mascot-greeting {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #ffffff;
+  padding: 16px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  cursor: pointer;
+  flex: 1;
+}
+
+.mascot-speech-bubble {
+  position: relative;
+  background: #f0f9ff;
+  border: 2px solid #bae6fd;
+  border-radius: 12px;
+  padding: 10px 14px;
+}
+
+.bubble-ja {
+  font-family: var(--font-kana);
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  font-size: 1.15rem;
+}
+
+.bubble-vi {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.today-mission-card {
+  background: linear-gradient(135deg, #ffffff 0%, #fef3c7 100%);
+  border: 2px solid #fde68a;
+  padding: 14px 18px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  flex: 1.2;
+}
+
+.today-mission-card.completed {
+  background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+  border-color: #6ee7b7;
+}
+
+.mission-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.mission-badge-done {
+  color: #059669;
+  font-size: 0.85rem;
+}
+
+.mission-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mission-step-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.mission-step-item:active {
+  background: rgba(255, 255, 255, 1);
+}
+
+.step-done {
+  opacity: 0.6;
+  text-decoration: line-through;
+  cursor: default;
+}
+
+/* Bản đồ tuyến tàu Shinkansen */
+.railway-map-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  padding: 24px 16px;
+  overflow: hidden;
+}
+
+.railway-scroll-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  padding: 20px 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+.railway-track {
+  display: inline-flex;
+  gap: 32px;
+  padding: 0 24px;
+  position: relative;
+  min-width: 100%;
+}
+
+.railway-track::before {
+  content: '';
+  position: absolute;
+  top: 48px;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: repeating-linear-gradient(90deg, #94a3b8 0px, #94a3b8 14px, #cbd5e1 14px, #cbd5e1 28px);
+  z-index: 1;
+}
+
+.station-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+  width: 130px;
+}
+
+.station-pin {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 4px solid var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.station-node:hover .station-pin {
+  transform: translateY(-4px) scale(1.05);
+}
+
+.station-node.locked .station-pin {
+  border-color: #cbd5e1;
+  background: #f1f5f9;
+  filter: grayscale(1);
+}
+
+.station-node.stamped .station-pin {
+  border-color: #10b981;
+}
+
+.station-emoji {
+  font-size: 2.2rem;
+}
+
+.lock-icon {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: #64748b;
+  color: #fff;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+}
+
+.stamp-icon {
+  position: absolute;
+  bottom: -6px;
+  right: -6px;
+  font-size: 1.4rem;
+}
+
+.station-signboard {
+  margin-top: 12px;
+  background: #ffffff;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 8px 10px;
+  text-align: center;
+  width: 100%;
+  box-shadow: var(--shadow-card);
+}
+
+.station-name-ja {
+  font-weight: 800;
+  color: var(--color-primary-dark);
+  font-size: 1.05rem;
+}
+
+.station-title-vi {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+.station-stars {
+  margin-top: 4px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #d97706;
+}
+
+.home-footer {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-sticker-book {
+  background: #ffffff;
+  border: 2px solid #fbcfe8;
+  color: #be185d;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: var(--shadow-card);
+}
+
+/* ========================================================
+   MÀN HÌNH GA TÀU (STATION HUB)
+   ======================================================== */
+
+.screen-station {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+
+.station-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.station-title-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.station-big-emoji {
+  font-size: 2.8rem;
+}
+
+.station-heading-text h2 {
+  font-size: 1.5rem;
+  color: var(--color-primary-dark);
+}
+
+.station-subtitle {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+.station-stamp-badge {
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+.station-stamp-badge.stamped {
+  background: #ecfdf5;
+  color: #059669;
+}
+
+.station-kana-banner {
+  background: #ffffff;
+  padding: 12px 18px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.kana-banner-label {
+  font-weight: 700;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+.kana-banner-list {
+  display: flex;
+  gap: 8px;
+}
+
+.kana-chip {
+  font-family: var(--font-kana);
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--color-primary-dark);
+  background: #e0f2fe;
+  padding: 4px 12px;
+  border-radius: 8px;
+}
+
+.station-quick-play {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-play-next {
+  width: 100%;
+  max-width: 400px;
+  padding: 16px;
+  font-size: 1.25rem;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  box-shadow: 0 6px 18px rgba(5, 150, 105, 0.35);
+}
+
+.station-games-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.game-item-card {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  box-shadow: var(--shadow-card);
+  gap: 16px;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.game-item-card:hover {
+  transform: translateY(-2px);
+}
+
+.game-item-icon {
+  font-size: 2.2rem;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f9ff;
+  border-radius: 12px;
+}
+
+.game-item-info {
+  flex: 1;
+}
+
+.game-item-title {
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--color-text-main);
+}
+
+.game-item-desc {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+.game-item-stars {
+  display: flex;
+  gap: 4px;
+}
+
+.star-icon {
+  font-size: 1.3rem;
+}
+
+.star-icon.earned {
+  color: #f59e0b;
+}
+
+.star-icon.empty {
+  color: #e2e8f0;
+}
+
+/* ========================================================
+   GIAO DIỆN CHUNG TRÒ CHƠI (GAME CONTAINER & CONTROLS)
+   ======================================================== */
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 16px;
+  max-width: 650px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.game-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.btn-exit-hold {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #ef4444;
+  border: 2px solid #fee2e2;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  overflow: hidden;
+}
+
+.exit-fill {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: rgba(239, 68, 68, 0.3);
+  pointer-events: none;
+}
+
+.game-progress-bar {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+}
+
+.progress-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.progress-dot.current {
+  background: var(--color-primary);
+  transform: scale(1.3);
+}
+
+.progress-dot.done {
+  background: var(--color-accent-green);
+}
+
+.btn-audio-replay-small {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(--color-primary-dark);
+  font-size: 1.4rem;
+  box-shadow: var(--shadow-card);
+  border: 2px solid #bae6fd;
+}
+
+/* ========================================================
+   TRÒ 1: GẶP CHỮ (MEET)
+   ======================================================== */
+
+.card-large {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.kana-char-display {
+  font-family: var(--font-kana);
+  font-size: 6.5rem;
+  font-weight: 900;
+  color: var(--color-primary-dark);
+  line-height: 1;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kana-details {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+}
+
+.kana-romaji {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #475569;
+}
+
+.kana-vi-hint {
+  font-size: 1.2rem;
+  color: #64748b;
+}
+
+.btn-audio-huge {
+  min-width: 200px;
+  padding: 16px 28px;
+  background: #e0f2fe;
+  color: var(--color-primary-dark);
+  border: 3px solid #38bdf8;
+  border-radius: 30px;
+  font-size: 1.3rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.anchor-word-box {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #f8fafc;
+  border: 2px solid #e2e8f0;
+  padding: 14px 20px;
+  border-radius: var(--radius-md);
+  width: 100%;
+  max-width: 380px;
+}
+
+.anchor-emoji {
+  font-size: 3rem;
+}
+
+.anchor-text {
+  text-align: left;
+}
+
+.anchor-word-kana {
+  font-family: var(--font-kana);
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: var(--color-text-main);
+}
+
+.char-highlight {
+  color: #ef4444;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.anchor-word-romaji {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.anchor-word-vi {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+}
+
+.btn-next-card {
+  width: 100%;
+  max-width: 320px;
+  padding: 16px;
+  font-size: 1.25rem;
+}
+
+.btn-next-card.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  filter: grayscale(1);
+}
+
+/* ========================================================
+   TRÒ 2: NGHE VÀ CHỌN (LISTEN_PICK)
+   ======================================================== */
+
+.question-instruction {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.btn-audio-replay {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(--color-primary-dark);
+  font-size: 1.3rem;
+  box-shadow: var(--shadow-card);
+  border: 2px solid #bae6fd;
+}
+
+.target-prompt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.prompt-speaker-icon {
+  font-size: 2.5rem;
+}
+
+.prompt-hint-romaji {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #475569;
+}
+
+.btn-big-speaker {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+  border: 4px solid #38bdf8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 16px auto 32px;
+  box-shadow: var(--shadow-soft);
+}
+
+.speaker-icon {
+  font-size: 3rem;
+}
+
+.speaker-label {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  margin-top: 4px;
+}
+
+.choices-grid {
+  display: grid;
+  gap: 16px;
+  width: 100%;
+}
+
+.choices-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.choices-4 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.choice-card {
+  min-height: 100px;
+  background: #ffffff;
+  border: 3px solid #e2e8f0;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.choice-char {
+  font-family: var(--font-kana);
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: var(--color-primary-dark);
+}
+
+.choice-word-card {
+  min-height: 120px;
+}
+
+.choice-emoji {
+  font-size: 2.8rem;
+}
+
+.choice-word {
+  font-family: var(--font-kana);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--color-text-main);
+  margin-top: 4px;
+}
+
+.choice-romaji {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+}
+
+.choice-card.correct {
+  background: #ecfdf5;
+  border-color: #10b981;
+  transform: scale(1.05);
+}
+
+.choice-card.wrong {
+  background: #fff1f2;
+  border-color: #ef4444;
+}
+
+.hint-highlight {
+  border-color: #f59e0b !important;
+  background: #fef3c7 !important;
+  animation: pulse-border 1.2s infinite;
+}
+
+/* ========================================================
+   TRÒ 3: BÓNG BAY CHỮ (BUBBLE_POP)
+   ======================================================== */
+
+.bubble-pop-game {
+  height: 80vh;
+}
+
+.bubble-playfield {
+  position: relative;
+  flex: 1;
+  background: linear-gradient(180deg, #dbeafe 0%, #ffffff 100%);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.floating-bubble {
+  position: absolute;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  user-select: none;
+  touch-action: none;
+  will-change: transform;
+}
+
+.bubble-char {
+  font-family: var(--font-kana);
+  font-size: 3rem;
+  font-weight: 900;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.bubble-shine {
+  position: absolute;
+  top: 14px;
+  left: 18px;
+  width: 22px;
+  height: 14px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  transform: rotate(-30deg);
+}
+
+.bubble-explode {
+  animation: explode 0.4s forwards;
+}
+
+.bubble-shake {
+  animation: shake 0.4s ease;
+}
+
+.hint-pulse {
+  animation: pulse-scale 0.8s infinite alternate;
+}
+
+/* ========================================================
+   TRÒ 4: KARUTA
+   ======================================================== */
+
+.karuta-score-board {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.score-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  box-shadow: var(--shadow-card);
+  font-weight: 800;
+}
+
+.score-vs {
+  font-weight: 900;
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+.karuta-tatami-board {
+  background: #e2d9b8;
+  border: 8px solid #5c4033;
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-soft);
+  flex: 1;
+}
+
+.tatami-grid {
+  display: grid;
+  gap: 16px;
+  height: 100%;
+}
+
+.cards-4 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.cards-6 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.cards-8 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.karuta-card {
+  background: #ffffff;
+  border: 3px solid #4b5563;
+  border-radius: 12px;
+  padding: 16px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.15s ease;
+}
+
+.karuta-card:hover {
+  transform: scale(1.03);
+}
+
+.karuta-emoji {
+  font-size: 3rem;
+}
+
+.karuta-word {
+  font-family: var(--font-kana);
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-top: 6px;
+}
+
+.karuta-romaji {
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.fly-to-child {
+  animation: flyChild 0.6s forwards;
+}
+
+.fly-to-bot {
+  animation: flyBot 0.6s forwards;
+}
+
+/* ========================================================
+   TRÒ 5: GHÉP TỪ (WORD_BUILDER)
+   ======================================================== */
+
+.wb-target-card {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 24px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.wb-emoji {
+  font-size: 5rem;
+}
+
+.wb-meaning {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--color-text-main);
+  margin-top: 8px;
+}
+
+.wb-romaji {
+  font-size: 1.1rem;
+  color: #64748b;
+}
+
+.wb-slots-row {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 32px;
+}
+
+.wb-slot {
+  width: 72px;
+  height: 72px;
+  border: 3px dashed #94a3b8;
+  border-radius: var(--radius-md);
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.wb-slot.active {
+  border-color: var(--color-primary);
+  border-style: solid;
+  background: #f0f9ff;
+  transform: scale(1.05);
+}
+
+.wb-slot.filled {
+  border-color: #10b981;
+  border-style: solid;
+  background: #ecfdf5;
+}
+
+.slot-placeholder {
+  font-size: 1.8rem;
+  color: #cbd5e1;
+}
+
+.slot-char {
+  font-family: var(--font-kana);
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: var(--color-primary-dark);
+}
+
+.wb-tiles-tray {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.wb-tile {
+  width: 76px;
+  height: 76px;
+  border-radius: var(--radius-md);
+  background: #ffffff;
+  border: 3px solid #38bdf8;
+  box-shadow: 0 6px 0 #0284c7;
+  font-family: var(--font-kana);
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: var(--color-primary-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.wb-tile:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #0284c7;
+}
+
+.wb-tile.locked {
+  opacity: 0.3;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ========================================================
+   MÀN HÌNH KẾT QUẢ (RESULT SCREEN)
+   ======================================================== */
+
+.screen-result {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: 24px;
+}
+
+.result-card {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  padding: 36px 28px;
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.praise-ja {
+  font-family: var(--font-kana);
+  font-size: 2.6rem;
+  font-weight: 900;
+  color: var(--color-primary-dark);
+}
+
+.praise-vi {
+  font-size: 1.25rem;
+  color: var(--color-text-muted);
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.result-stars-row {
+  display: flex;
+  gap: 12px;
+  margin: 12px 0;
+}
+
+.star-burst {
+  font-size: 3.5rem;
+  opacity: 0.2;
+  transform: scale(0.5);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.star-burst.active {
+  opacity: 1;
+  transform: scale(1);
+  animation: starBounce 0.6s ease forwards;
+}
+
+.reward-banner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 20px;
+  border-radius: var(--radius-md);
+  width: 100%;
+  text-align: left;
+}
+
+.stamp-banner {
+  background: #ecfdf5;
+  border: 2px solid #6ee7b7;
+}
+
+.stamp-giant {
+  font-size: 3rem;
+}
+
+.sticker-banner {
+  background: #fdf2f8;
+  border: 2px solid #fbcfe8;
+}
+
+.gift-box-anim {
+  font-size: 2.5rem;
+}
+
+.reward-title {
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--color-text-main);
+}
+
+.reward-desc {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.result-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.btn-action-large {
+  width: 100%;
+  padding: 16px;
+  font-size: 1.2rem;
+}
+
+/* ========================================================
+   SỔ STICKER (STICKERS SCREEN)
+   ======================================================== */
+
+.screen-stickers {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.stickers-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.stickers-title-box h2 {
+  font-size: 1.5rem;
+  color: var(--color-primary-dark);
+}
+
+.stickers-counter {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+
+.stickers-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.sticker-slot {
+  aspect-ratio: 1;
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sticker-slot.unlocked .sticker-emoji {
+  font-size: 3.2rem;
+}
+
+.sticker-slot.locked {
+  background: #f1f5f9;
+  border: 2px dashed #cbd5e1;
+}
+
+.sticker-silhouette {
+  font-size: 1.8rem;
+  opacity: 0.4;
+}
+
+/* ========================================================
+   VÙNG PHỤ HUYNH (PARENT ZONE)
+   ======================================================== */
+
+.screen-parent {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.parent-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.parent-content-scroll {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.parent-card {
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  padding: 20px;
+  box-shadow: var(--shadow-card);
+}
+
+.card-section-title {
+  font-size: 1.25rem;
+  color: var(--color-text-main);
+  margin-bottom: 14px;
+}
+
+.setting-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.setting-name {
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.setting-desc {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+.toggle-switch {
+  position: relative;
+  width: 56px;
+  height: 32px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #cbd5e1;
+  border-radius: 34px;
+  transition: 0.3s;
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 24px;
+  width: 24px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+input:checked + .toggle-slider {
+  background-color: var(--color-accent-green);
+}
+
+input:checked + .toggle-slider:before {
+  transform: translateX(24px);
+}
+
+.parent-select {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 2px solid #cbd5e1;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.srs-table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.srs-filter-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.filter-btn {
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.filter-btn.active {
+  background: var(--color-primary);
+  color: #ffffff;
+}
+
+.srs-items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 10px;
+}
+
+.srs-badge {
+  background: #f8fafc;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.srs-char {
+  font-family: var(--font-kana);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--color-primary-dark);
+}
+
+.srs-word-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.srs-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  margin-top: 4px;
+}
+
+.srs-box-tag {
+  color: #ffffff;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.data-management-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn-manage {
+  width: 100%;
+  padding: 14px;
+  font-size: 1.05rem;
+}
+
+/* ========================================================
+   MODAL BACKDROP & CARD
+   ======================================================== */
+
+.modal-backdrop {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.modal-card {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  max-width: 440px;
+  width: 100%;
+  padding: 28px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.btn-close {
+  background: transparent;
+  font-size: 1.4rem;
+  color: #94a3b8;
+}
+
+/* ========================================================
+   ANIMATIONS & EFFECTS
+   ======================================================== */
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+@keyframes pulse-border {
+  0% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.6); }
+  70% { box-shadow: 0 0 0 10px rgba(245, 158, 11, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-8px); }
+  75% { transform: translateX(8px); }
+}
+
+@keyframes explode {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.8; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+
+@keyframes flyChild {
+  0% { transform: scale(1); }
+  100% { transform: translate(-100px, -200px) scale(0.2); opacity: 0; }
+}
+
+@keyframes flyBot {
+  0% { transform: scale(1); }
+  100% { transform: translate(100px, -200px) scale(0.2); opacity: 0; }
+}
+
+@keyframes starBounce {
+  0% { transform: scale(0.3); }
+  60% { transform: scale(1.25); }
+  100% { transform: scale(1); }
+}
+
+.pulse { animation: pulse 0.6s infinite; }
+.shake { animation: shake 0.4s ease; }
+.glow {
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.7);
+}
+
+.mascot-hand.waving {
+  transform-origin: 28px 80px;
+  animation: wave 1s infinite alternate ease-in-out;
+}
+
+@keyframes wave {
+  0% { transform: rotate(-10deg); }
+  100% { transform: rotate(25deg); }
+}
+
+/* Confetti particles */
+.confetti-container {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.confetti-particle {
+  position: absolute;
+  top: -20px;
+  animation: confettiFall 2.2s linear forwards;
+}
+
+@keyframes confettiFall {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(105vh) rotate(720deg); opacity: 0; }
+}
+
+/* Tôn trọng người dùng bật chế độ giảm hiệu ứng chuyển động */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
+}

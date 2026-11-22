@@ -1,0 +1,171 @@
+{
+  "version": "0.1.0",
+  "note": "Thứ tự học và trò chơi. Thêm bài mới = thêm 1 mục vào 'lessons', không cần sửa code.",
+  "lessons": [
+    {
+      "id": "L1",
+      "order": 1,
+      "type": "new",
+      "title_vi": "Ga Tokyo: hàng A",
+      "station": {
+        "name": "Tokyo",
+        "emoji": "🗼"
+      },
+      "kana": [
+        "h_a",
+        "h_i",
+        "h_u",
+        "h_e",
+        "h_o"
+      ],
+      "intro_words": [
+        "w_ashi",
+        "w_ika",
+        "w_ushi",
+        "w_eki",
+        "w_okashi"
+      ],
+      "games": [
+        "meet",
+        "listen_pick",
+        "bubble_pop",
+        "word_builder"
+      ]
+    },
+    {
+      "id": "L2",
+      "order": 2,
+      "type": "new",
+      "title_vi": "Ga Kyoto: hàng KA",
+      "station": {
+        "name": "Kyoto",
+        "emoji": "⛩️"
+      },
+      "kana": [
+        "h_ka",
+        "h_ki",
+        "h_ku",
+        "h_ke",
+        "h_ko"
+      ],
+      "intro_words": [
+        "w_kasa",
+        "w_ki",
+        "w_kutsu",
+        "w_keito",
+        "w_koi"
+      ],
+      "games": [
+        "meet",
+        "listen_pick",
+        "bubble_pop",
+        "karuta",
+        "word_builder"
+      ]
+    },
+    {
+      "id": "R1",
+      "order": 3,
+      "type": "review",
+      "title_vi": "Ga Nagoya: ôn tập",
+      "station": {
+        "name": "Nagoya",
+        "emoji": "🏯"
+      },
+      "review_of": [
+        "L1",
+        "L2"
+      ],
+      "games": [
+        "listen_pick",
+        "bubble_pop",
+        "karuta",
+        "word_builder"
+      ]
+    },
+    {
+      "id": "L3",
+      "order": 4,
+      "type": "new",
+      "title_vi": "Ga Osaka: hàng SA",
+      "station": {
+        "name": "Osaka",
+        "emoji": "🐙"
+      },
+      "kana": [
+        "h_sa",
+        "h_shi",
+        "h_su",
+        "h_se",
+        "h_so"
+      ],
+      "intro_words": [
+        "w_sai",
+        "w_shika",
+        "w_suika",
+        "w_sekai",
+        "w_soto"
+      ],
+      "games": [
+        "meet",
+        "listen_pick",
+        "bubble_pop",
+        "karuta",
+        "word_builder"
+      ]
+    },
+    {
+      "id": "L4",
+      "order": 5,
+      "type": "new",
+      "title_vi": "Ga Sapporo: hàng TA",
+      "station": {
+        "name": "Sapporo",
+        "emoji": "⛄"
+      },
+      "kana": [
+        "h_ta",
+        "h_chi",
+        "h_tsu",
+        "h_te",
+        "h_to"
+      ],
+      "intro_words": [
+        "w_tako",
+        "w_chichi",
+        "w_tsuki",
+        "w_te",
+        "w_tokei"
+      ],
+      "games": [
+        "meet",
+        "listen_pick",
+        "bubble_pop",
+        "karuta",
+        "word_builder"
+      ]
+    },
+    {
+      "id": "R2",
+      "order": 6,
+      "type": "review",
+      "title_vi": "Ga Hiroshima: ôn tập lớn",
+      "station": {
+        "name": "Hiroshima",
+        "emoji": "🕊️"
+      },
+      "review_of": [
+        "L1",
+        "L2",
+        "L3",
+        "L4"
+      ],
+      "games": [
+        "listen_pick",
+        "bubble_pop",
+        "karuta",
+        "word_builder"
+      ]
+    }
+  ]
+}
