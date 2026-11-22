@@ -49,6 +49,17 @@ export default {
               
               <div class="setting-row">
                 <div class="setting-info">
+                  <div class="setting-name">Mở khoá tự do tất cả các ga</div>
+                  <div class="setting-desc">Cho phép bé chọn bất kỳ bài học nào mà không cần mở khoá tuần tự</div>
+                </div>
+                <label class="toggle-switch">
+                  <input type="checkbox" id="toggle-unlock-all" ${settings.unlock_all_stations !== false ? 'checked' : ''}>
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+
+              <div class="setting-row">
+                <div class="setting-info">
                   <div class="setting-name">Hiện chữ phiên âm Romaji</div>
                   <div class="setting-desc">Hỗ trợ ba mẹ chưa biết tiếng Nhật đọc cùng bé</div>
                 </div>
@@ -205,6 +216,13 @@ export default {
       };
 
       // Đổi cài đặt
+      const toggleUnlockAll = root.querySelector('#toggle-unlock-all');
+      if (toggleUnlockAll) {
+        toggleUnlockAll.onchange = () => {
+          progress.setSetting('unlock_all_stations', toggleUnlockAll.checked);
+        };
+      }
+
       const toggleRomaji = root.querySelector('#toggle-romaji');
       if (toggleRomaji) {
         toggleRomaji.onchange = () => {

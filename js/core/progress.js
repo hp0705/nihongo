@@ -37,7 +37,8 @@ function createDefaultState(contentVersion = '0.1.0') {
       audio_speed: 'normal',
       daily_limit_min: 20,
       music: true,
-      speech_fallback: false
+      speech_fallback: false,
+      unlock_all_stations: true
     }
   };
 }
@@ -304,6 +305,9 @@ export class ProgressManager {
   }
 
   isStationUnlocked(lessonId, lessonsOrdered) {
+    if (this.state.settings?.unlock_all_stations) {
+      return true;
+    }
     if (!lessonsOrdered || lessonsOrdered.length === 0) return true;
     const targetIdx = lessonsOrdered.findIndex(l => l.id === lessonId);
     if (targetIdx <= 0) return true; // Ga đầu tiên (L1) luôn luôn mở
