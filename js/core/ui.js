@@ -190,6 +190,6 @@ export const UI = {
     setTimeout(() => {
       toast.classList.remove('cheer-show');
       setTimeout(() => toast.remove(), 400);
-    }, 1800);
+    }, 2600);
   }
 };

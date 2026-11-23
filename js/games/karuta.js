@@ -241,15 +241,21 @@ export default {
 
               // Hiện ngay bong bóng khen ngợi マイちゃん và phát âm thanh tiếng Nhật
               const phrase = audio.getPraisePhrase(data);
+              let praisePromise = Promise.resolve();
               if (phrase) {
                 UI.showCheerBubble(phrase.text, phrase.vi, 'celebrate');
-                audio.play(audio.audioFor('ui', phrase), { fallbackText: phrase.text });
+                praisePromise = audio.play(audio.audioFor('ui', phrase), { fallbackText: phrase.text });
               }
 
-              setTimeout(() => {
-                qIndex++;
-                showQuestion(qIndex);
-              }, 1400);
+              // Đợi lời khen phát xong hoàn toàn + nghỉ nhẹ 400ms rồi mới chuyển sang câu hỏi tiếp theo
+              praisePromise.then(() => {
+                setTimeout(() => {
+                  if (!isExited) {
+                    qIndex++;
+                    showQuestion(qIndex);
+                  }
+                }, 400);
+              });
             } else {
               roundWrong++;
               totalWrong++;

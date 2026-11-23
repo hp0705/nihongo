@@ -255,20 +255,24 @@ export default {
                 const emojiEl = root.querySelector('#wb-emoji-anim');
                 if (emojiEl) emojiEl.classList.add('celebrate-jump');
 
-                // Phát lại toàn bộ từ
-                setTimeout(() => playWordAudio('normal'), 200);
-
-                // Sau khi đọc từ xong, phát lời khen ngợi マイちゃん
-                setTimeout(() => {
-                  audio.playPraise(data).then(phrase => {
-                    if (phrase) UI.showCheerBubble(phrase.text, phrase.vi, 'celebrate');
+                // Phát lại toàn bộ từ, sau đó phát trọn vẹn lời khen マイちゃん rồi mới chuyển câu
+                const wordAudioPath = audio.audioFor('word', targetWord, 'normal');
+                audio.play(wordAudioPath, { fallbackText: targetWord.word }).then(() => {
+                  const phrase = audio.getPraisePhrase(data);
+                  let praisePromise = Promise.resolve();
+                  if (phrase) {
+                    UI.showCheerBubble(phrase.text, phrase.vi, 'celebrate');
+                    praisePromise = audio.play(audio.audioFor('ui', phrase), { fallbackText: phrase.text });
+                  }
+                  praisePromise.then(() => {
+                    setTimeout(() => {
+                      if (!isExited) {
+                        qIndex++;
+                        showQuestion(qIndex);
+                      }
+                    }, 400);
                   });
-                }, 800);
-
-                setTimeout(() => {
-                  qIndex++;
-                  showQuestion(qIndex);
-                }, 2000);
+                });
               } else {
                 updateSlotHighlights();
               }
