@@ -2,7 +2,7 @@
  * sw.js - Service Worker hỗ trợ học Offline (PWA)
  */
 
-const CACHE_VERSION = 'nihongo-adventure-v1.0.0';
+const CACHE_VERSION = 'nihongo-adventure-v1.1.0';
 const STATIC_ASSETS = [
   './',
   './index.html',
@@ -83,7 +83,23 @@ self.addEventListener('fetch', (e) => {
     return;
   }
 
-  // 3. Với các tài nguyên tĩnh khác: Cache first, fallback to network
+  // 3. Với các file code JS, CSS, HTML: Dùng Network First khi online để luôn nhận code mới nhất
+  if (url.pathname.endsWith('.js') || url.pathname.endsWith('.css') || url.pathname.endsWith('.html') || url.pathname.endsWith('/')) {
+    e.respondWith(
+      fetch(e.request)
+        .then((res) => {
+          if (res.ok) {
+            const clone = res.clone();
+            caches.open(CACHE_VERSION).then((cache) => cache.put(e.request, clone));
+          }
+          return res;
+        })
+        .catch(() => caches.match(e.request))
+    );
+    return;
+  }
+
+  // 4. Với các tài nguyên khác: Cache first, fallback to network
   e.respondWith(
     caches.match(e.request).then((cached) => {
       return cached || fetch(e.request);

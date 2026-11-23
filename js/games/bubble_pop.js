@@ -245,10 +245,12 @@ export default {
               answers.push({ kind: 'kana', id: targetId, correct: isFirstTry });
               progress.recordAnswer('kana', targetId, isFirstTry, data.config.mastery);
 
-              // Phát lời khen tiếng Nhật ngẫu nhiên khen マイちゃん
-              audio.playPraise(data).then(phrase => {
-                if (phrase) UI.showCheerBubble(phrase.text, phrase.vi, 'celebrate');
-              });
+              // Hiện ngay bong bóng khen ngợi マイちゃん và phát âm thanh tiếng Nhật
+              const phrase = audio.getPraisePhrase(data);
+              if (phrase) {
+                UI.showCheerBubble(phrase.text, phrase.vi, 'celebrate');
+                audio.play(audio.audioFor('ui', phrase), { fallbackText: phrase.text });
+              }
 
               if (idleTimer) clearTimeout(idleTimer);
 
@@ -256,18 +258,23 @@ export default {
                 if (animFrameId) cancelAnimationFrame(animFrameId);
                 qIndex++;
                 showQuestion(qIndex);
-              }, 1200);
+              }, 1400);
             } else {
               wrongCount++;
               totalWrong++;
               audio.playSfx('wrong');
               b.el.classList.add('bubble-shake');
 
-              // Phát lời động viên tiếng Nhật cho マイちゃん
-              audio.playEncouragement(data).then(phrase => {
-                if (phrase) UI.showCheerBubble(phrase.text, phrase.vi, 'yawn');
+              // Hiện ngay bong bóng động viên マイちゃん và phát âm thanh tiếng Nhật
+              const phrase = audio.getEncouragePhrase(data);
+              if (phrase) {
+                UI.showCheerBubble(phrase.text, phrase.vi, 'yawn');
+                audio.play(audio.audioFor('ui', phrase), { fallbackText: phrase.text }).then(() => {
+                  setTimeout(playTargetVoice, 200);
+                });
+              } else {
                 setTimeout(playTargetVoice, 200);
-              });
+              }
 
               if (wrongCount >= 2) {
                 const correctB = bubbles.find(item => item.id === targetId);

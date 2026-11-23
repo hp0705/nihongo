@@ -205,15 +205,17 @@ export default {
           answers.push({ kind: 'word', id: targetId, correct: false });
           progress.recordAnswer('word', targetId, false, data.config.mastery);
 
-          // Phát lời động viên nhẹ nhàng cho マイちゃん
-          audio.playEncouragement(data).then(phrase => {
-            if (phrase) UI.showCheerBubble(phrase.text, phrase.vi, 'yawn');
-          });
+          // Hiện ngay bong bóng động viên nhẹ nhàng cho マイちゃん
+          const botEncouragePhrase = audio.getEncouragePhrase(data);
+          if (botEncouragePhrase) {
+            UI.showCheerBubble(botEncouragePhrase.text, botEncouragePhrase.vi, 'yawn');
+            audio.play(audio.audioFor('ui', botEncouragePhrase), { fallbackText: botEncouragePhrase.text });
+          }
 
           setTimeout(() => {
             qIndex++;
             showQuestion(qIndex);
-          }, 1300);
+          }, 1400);
         }, Math.max(2500, reactionTime));
 
         // Bé chạm thẻ
@@ -237,26 +239,33 @@ export default {
               answers.push({ kind: 'word', id: targetId, correct: isFirstTry });
               progress.recordAnswer('word', targetId, isFirstTry, data.config.mastery);
 
-              // Phát lời khen tiếng Nhật ngẫu nhiên khen マイちゃん
-              audio.playPraise(data).then(phrase => {
-                if (phrase) UI.showCheerBubble(phrase.text, phrase.vi, 'celebrate');
-              });
+              // Hiện ngay bong bóng khen ngợi マイちゃん và phát âm thanh tiếng Nhật
+              const phrase = audio.getPraisePhrase(data);
+              if (phrase) {
+                UI.showCheerBubble(phrase.text, phrase.vi, 'celebrate');
+                audio.play(audio.audioFor('ui', phrase), { fallbackText: phrase.text });
+              }
 
               setTimeout(() => {
                 qIndex++;
                 showQuestion(qIndex);
-              }, 1300);
+              }, 1400);
             } else {
               roundWrong++;
               totalWrong++;
               card.classList.add('shake', 'wrong');
               audio.playSfx('wrong');
 
-              // Phát lời động viên tiếng Nhật cho マイちゃん
-              audio.playEncouragement(data).then(phrase => {
-                if (phrase) UI.showCheerBubble(phrase.text, phrase.vi, 'yawn');
+              // Hiện ngay bong bóng động viên マイちゃん và phát âm thanh tiếng Nhật
+              const phrase = audio.getEncouragePhrase(data);
+              if (phrase) {
+                UI.showCheerBubble(phrase.text, phrase.vi, 'yawn');
+                audio.play(audio.audioFor('ui', phrase), { fallbackText: phrase.text }).then(() => {
+                  setTimeout(playWordAudio, 200);
+                });
+              } else {
                 setTimeout(playWordAudio, 200);
-              });
+              }
 
               // Sau 2 lần bấm sai: tự động làm thẻ đúng phát sáng
               if (roundWrong >= 2) {

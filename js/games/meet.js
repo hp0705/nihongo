@@ -265,26 +265,33 @@ export default {
               answers.push({ kind: 'kana', id: targetId, correct: isFirstTryCorrect });
               progress.recordAnswer('kana', targetId, isFirstTryCorrect, data.config.mastery);
 
-              // Phát lời khen tiếng Nhật ngẫu nhiên khen マイちゃん
-              audio.playPraise(data).then(phrase => {
-                if (phrase) UI.showCheerBubble(phrase.text, phrase.vi, 'celebrate');
-              });
+              // Hiện ngay bong bóng khen ngợi マイちゃん và phát âm thanh tiếng Nhật
+              const phrase = audio.getPraisePhrase(data);
+              if (phrase) {
+                UI.showCheerBubble(phrase.text, phrase.vi, 'celebrate');
+                audio.play(audio.audioFor('ui', phrase), { fallbackText: phrase.text });
+              }
 
               setTimeout(() => {
                 checkIndex++;
                 showMiniCheck(checkIndex);
-              }, 1300);
+              }, 1400);
             } else {
               wrongCountForThisQuestion++;
               totalWrong++;
               btn.classList.add('shake', 'wrong');
               audio.playSfx('wrong');
 
-              // Phát lời động viên tiếng Nhật cho マイちゃん
-              audio.playEncouragement(data).then(phrase => {
-                if (phrase) UI.showCheerBubble(phrase.text, phrase.vi, 'yawn');
+              // Hiện ngay bong bóng động viên マイちゃん và phát âm thanh tiếng Nhật
+              const phrase = audio.getEncouragePhrase(data);
+              if (phrase) {
+                UI.showCheerBubble(phrase.text, phrase.vi, 'yawn');
+                audio.play(audio.audioFor('ui', phrase), { fallbackText: phrase.text }).then(() => {
+                  setTimeout(playTargetVoice, 200);
+                });
+              } else {
                 setTimeout(playTargetVoice, 200);
-              });
+              }
 
               // Sau 2 lần sai: tự động tô gợi ý đáp án đúng
               if (wrongCountForThisQuestion >= 2) {
