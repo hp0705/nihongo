@@ -1777,6 +1777,60 @@ input:checked + .toggle-slider:before {
   100% { transform: rotate(25deg); }
 }
 
+/* Cheer toast bubble */
+.cheer-toast {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-30px) scale(0.9);
+  background: #ffffff;
+  border: 3px solid #38bdf8;
+  border-radius: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 24px 8px 12px;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.cheer-toast.cheer-show {
+  transform: translateX(-50%) translateY(0) scale(1);
+  opacity: 1;
+}
+
+.cheer-toast.cheer-happy,
+.cheer-toast.cheer-celebrate {
+  border-color: #10b981;
+  background: #f0fdf4;
+}
+
+.cheer-toast.cheer-yawn {
+  border-color: #f59e0b;
+  background: #fffbeb;
+}
+
+.cheer-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.cheer-ja {
+  font-family: var(--font-kana);
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: var(--color-primary-dark);
+}
+
+.cheer-vi {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
 /* Confetti particles */
 .confetti-container {
   position: fixed;

@@ -3,6 +3,8 @@
  * Trò 2: "Nghe và chọn" - rèn luyện phản xạ nối âm thanh với mặt chữ và từ vựng.
  */
 
+import { UI } from '../core/ui.js';
+
 export default {
   id: 'listen_pick',
 
@@ -211,18 +213,26 @@ export default {
               answers.push({ kind, id: targetId, correct: isFirstTry });
               progress.recordAnswer(kind, targetId, isFirstTry, data.config.mastery);
 
+              // Phát lời khen tiếng Nhật ngẫu nhiên khen マイちゃん
+              audio.playPraise(data).then(phrase => {
+                if (phrase) UI.showCheerBubble(phrase.text, phrase.vi, 'celebrate');
+              });
+
               setTimeout(() => {
                 qIndex++;
                 showQuestion(qIndex);
-              }, 800);
+              }, 1300);
             } else {
               wrongCount++;
               totalWrong++;
               btn.classList.add('shake', 'wrong');
               audio.playSfx('wrong');
 
-              // Phát lại âm thanh đúng
-              setTimeout(playVoice, 250);
+              // Phát lời động viên tiếng Nhật cho マイちゃん
+              audio.playEncouragement(data).then(phrase => {
+                if (phrase) UI.showCheerBubble(phrase.text, phrase.vi, 'yawn');
+                setTimeout(playVoice, 200);
+              });
 
               // Sau 2 lần sai tự động gợi ý đáp án đúng
               if (wrongCount >= 2) {

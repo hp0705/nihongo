@@ -116,5 +116,15 @@
   "assets/audio/ja/ui/ohayou.mp3": "9730631dfb4f",
   "assets/audio/ja/ui/oyasumi.mp3": "55d13474ae25",
   "assets/audio/ja/ui/hajimeyou.mp3": "be223443de14",
-  "assets/audio/ja/ui/yoku_dekimashita.mp3": "11c9d8b45c0d"
+  "assets/audio/ja/ui/yoku_dekimashita.mp3": "11c9d8b45c0d",
+  "assets/audio/ja/ui/mai_jouzu.mp3": "93ae1ef04a04",
+  "assets/audio/ja/ui/mai_sugoi.mp3": "b2455ef21888",
+  "assets/audio/ja/ui/mai_yatta.mp3": "1030568f0317",
+  "assets/audio/ja/ui/mai_seikai.mp3": "c60d0377edfe",
+  "assets/audio/ja/ui/mai_kakkoii.mp3": "a235a1b0a9d6",
+  "assets/audio/ja/ui/mai_sono_choushi.mp3": "1cdf4c27064c",
+  "assets/audio/ja/ui/mai_mouikkai.mp3": "9c74f58bc6c8",
+  "assets/audio/ja/ui/mai_daijoubu.mp3": "6c29d953299e",
+  "assets/audio/ja/ui/mai_mouchotto.mp3": "15dd518319c3",
+  "assets/audio/ja/ui/mai_yukkuri.mp3": "b47520770ae7"
 }

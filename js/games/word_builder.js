@@ -3,6 +3,8 @@
  * Trò 5: "Ghép từ" - ghép các chữ rời thành từ vựng hoàn chỉnh.
  */
 
+import { UI } from '../core/ui.js';
+
 export default {
   id: 'word_builder',
 
@@ -256,10 +258,17 @@ export default {
                 // Phát lại toàn bộ từ
                 setTimeout(() => playWordAudio('normal'), 200);
 
+                // Sau khi đọc từ xong, phát lời khen ngợi マイちゃん
+                setTimeout(() => {
+                  audio.playPraise(data).then(phrase => {
+                    if (phrase) UI.showCheerBubble(phrase.text, phrase.vi, 'celebrate');
+                  });
+                }, 800);
+
                 setTimeout(() => {
                   qIndex++;
                   showQuestion(qIndex);
-                }, 1300);
+                }, 2000);
               } else {
                 updateSlotHighlights();
               }
@@ -269,6 +278,11 @@ export default {
               totalWrong++;
               audio.playSfx('wrong');
               btn.classList.add('shake', 'wrong');
+
+              // Phát lời động viên tiếng Nhật cho マイちゃん
+              audio.playEncouragement(data).then(phrase => {
+                if (phrase) UI.showCheerBubble(phrase.text, phrase.vi, 'yawn');
+              });
 
               setTimeout(() => {
                 btn.classList.remove('shake', 'wrong');

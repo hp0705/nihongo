@@ -163,5 +163,33 @@ export const UI = {
     setTimeout(() => {
       container.remove();
     }, 2500);
+  },
+
+  /**
+   * Hiển thị bong bóng lời khen / động viên từ Bé Mây
+   */
+  showCheerBubble(text, vi, mood = 'celebrate') {
+    const existing = document.querySelector('.cheer-toast');
+    if (existing) existing.remove();
+
+    const toast = document.createElement('div');
+    toast.className = `cheer-toast cheer-${mood}`;
+    toast.innerHTML = `
+      <div class="cheer-mascot">${this.renderMascot(mood, '52px')}</div>
+      <div class="cheer-content">
+        <div class="cheer-ja">${text}</div>
+        <div class="cheer-vi">${vi}</div>
+      </div>
+    `;
+
+    document.body.appendChild(toast);
+    setTimeout(() => {
+      toast.classList.add('cheer-show');
+    }, 10);
+
+    setTimeout(() => {
+      toast.classList.remove('cheer-show');
+      setTimeout(() => toast.remove(), 400);
+    }, 1800);
   }
 };

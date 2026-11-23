@@ -3,6 +3,8 @@
  * Trò 3: "Bóng bay chữ" - giải toả căng thẳng, nhận diện nhanh mặt chữ kana.
  */
 
+import { UI } from '../core/ui.js';
+
 export default {
   id: 'bubble_pop',
 
@@ -243,21 +245,29 @@ export default {
               answers.push({ kind: 'kana', id: targetId, correct: isFirstTry });
               progress.recordAnswer('kana', targetId, isFirstTry, data.config.mastery);
 
+              // Phát lời khen tiếng Nhật ngẫu nhiên khen マイちゃん
+              audio.playPraise(data).then(phrase => {
+                if (phrase) UI.showCheerBubble(phrase.text, phrase.vi, 'celebrate');
+              });
+
               if (idleTimer) clearTimeout(idleTimer);
 
               setTimeout(() => {
                 if (animFrameId) cancelAnimationFrame(animFrameId);
                 qIndex++;
                 showQuestion(qIndex);
-              }, 700);
+              }, 1200);
             } else {
               wrongCount++;
               totalWrong++;
               audio.playSfx('wrong');
               b.el.classList.add('bubble-shake');
 
-              // Phát lại âm thanh đúng
-              setTimeout(playTargetVoice, 200);
+              // Phát lời động viên tiếng Nhật cho マイちゃん
+              audio.playEncouragement(data).then(phrase => {
+                if (phrase) UI.showCheerBubble(phrase.text, phrase.vi, 'yawn');
+                setTimeout(playTargetVoice, 200);
+              });
 
               if (wrongCount >= 2) {
                 const correctB = bubbles.find(item => item.id === targetId);

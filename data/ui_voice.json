@@ -109,6 +109,106 @@
       "audio": {
         "normal": "assets/audio/ja/ui/yoku_dekimashita.mp3"
       }
+    },
+    {
+      "id": "ui_mai_jouzu",
+      "text": "マイちゃん、じょうず！",
+      "vi": "Mai-chan giỏi quá!",
+      "tts_text": "マイちゃん、じょうず！",
+      "category": "praise",
+      "audio": {
+        "normal": "assets/audio/ja/ui/mai_jouzu.mp3"
+      }
+    },
+    {
+      "id": "ui_mai_sugoi",
+      "text": "マイちゃん、すごい！",
+      "vi": "Mai-chan tuyệt vời!",
+      "tts_text": "マイちゃん、すごい！",
+      "category": "praise",
+      "audio": {
+        "normal": "assets/audio/ja/ui/mai_sugoi.mp3"
+      }
+    },
+    {
+      "id": "ui_mai_yatta",
+      "text": "マイちゃん、やったー！",
+      "vi": "Mai-chan hoan hô!",
+      "tts_text": "マイちゃん、やったー！",
+      "category": "praise",
+      "audio": {
+        "normal": "assets/audio/ja/ui/mai_yatta.mp3"
+      }
+    },
+    {
+      "id": "ui_mai_seikai",
+      "text": "マイちゃん、せいかい！",
+      "vi": "Mai-chan đúng rồi!",
+      "tts_text": "マイちゃん、せいかい！",
+      "category": "praise",
+      "audio": {
+        "normal": "assets/audio/ja/ui/mai_seikai.mp3"
+      }
+    },
+    {
+      "id": "ui_mai_kakkoii",
+      "text": "マイちゃん、かっこいい！",
+      "vi": "Mai-chan đỉnh quá!",
+      "tts_text": "マイちゃん、かっこいい！",
+      "category": "praise",
+      "audio": {
+        "normal": "assets/audio/ja/ui/mai_kakkoii.mp3"
+      }
+    },
+    {
+      "id": "ui_mai_sono_choushi",
+      "text": "マイちゃん、そのちょうし！",
+      "vi": "Mai-chan, cứ thế phát huy nhé!",
+      "tts_text": "マイちゃん、そのちょうし！",
+      "category": "praise",
+      "audio": {
+        "normal": "assets/audio/ja/ui/mai_sono_choushi.mp3"
+      }
+    },
+    {
+      "id": "ui_mai_mouikkai",
+      "text": "おしい！マイちゃん、もういっかい！",
+      "vi": "Tiếc quá! Mai-chan thử lại lần nữa nhé!",
+      "tts_text": "おしい！マイちゃん、もういっかい！",
+      "category": "encourage",
+      "audio": {
+        "normal": "assets/audio/ja/ui/mai_mouikkai.mp3"
+      }
+    },
+    {
+      "id": "ui_mai_daijoubu",
+      "text": "だいじょうぶ！マイちゃん、がんばって！",
+      "vi": "Không sao đâu! Mai-chan cố lên nhé!",
+      "tts_text": "だいじょうぶ！マイちゃん、がんばって！",
+      "category": "encourage",
+      "audio": {
+        "normal": "assets/audio/ja/ui/mai_daijoubu.mp3"
+      }
+    },
+    {
+      "id": "ui_mai_mouchotto",
+      "text": "もうちょっと！マイちゃん、つぎはいけるよ！",
+      "vi": "Suýt chút nữa thôi! Lần tới Mai-chan làm được ngay!",
+      "tts_text": "もうちょっと！マイちゃん、つぎはいけるよ！",
+      "category": "encourage",
+      "audio": {
+        "normal": "assets/audio/ja/ui/mai_mouchotto.mp3"
+      }
+    },
+    {
+      "id": "ui_mai_yukkuri",
+      "text": "マイちゃん、ゆっくりでいいよ！",
+      "vi": "Mai-chan cứ từ từ làm nhé!",
+      "tts_text": "マイちゃん、ゆっくりでいいよ！",
+      "category": "encourage",
+      "audio": {
+        "normal": "assets/audio/ja/ui/mai_yukkuri.mp3"
+      }
     }
   ]
 }

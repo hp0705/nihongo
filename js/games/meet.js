@@ -3,6 +3,8 @@
  * Trò 1: "Gặp chữ" - học nhận diện chữ mới qua thẻ lớn, phát âm và từ minh hoạ.
  */
 
+import { UI } from '../core/ui.js';
+
 export default {
   id: 'meet',
 
@@ -263,18 +265,26 @@ export default {
               answers.push({ kind: 'kana', id: targetId, correct: isFirstTryCorrect });
               progress.recordAnswer('kana', targetId, isFirstTryCorrect, data.config.mastery);
 
+              // Phát lời khen tiếng Nhật ngẫu nhiên khen マイちゃん
+              audio.playPraise(data).then(phrase => {
+                if (phrase) UI.showCheerBubble(phrase.text, phrase.vi, 'celebrate');
+              });
+
               setTimeout(() => {
                 checkIndex++;
                 showMiniCheck(checkIndex);
-              }, 900);
+              }, 1300);
             } else {
               wrongCountForThisQuestion++;
               totalWrong++;
               btn.classList.add('shake', 'wrong');
               audio.playSfx('wrong');
 
-              // Phát lại âm đúng
-              setTimeout(playTargetVoice, 300);
+              // Phát lời động viên tiếng Nhật cho マイちゃん
+              audio.playEncouragement(data).then(phrase => {
+                if (phrase) UI.showCheerBubble(phrase.text, phrase.vi, 'yawn');
+                setTimeout(playTargetVoice, 200);
+              });
 
               // Sau 2 lần sai: tự động tô gợi ý đáp án đúng
               if (wrongCountForThisQuestion >= 2) {

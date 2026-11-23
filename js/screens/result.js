@@ -47,8 +47,15 @@ export default {
       progress.save();
     }
 
-    // Chọn lời khen tiếng Nhật ngẫu nhiên
-    const praisePhrases = ['ui_sugoi', 'ui_yatta', 'ui_iine', 'ui_yoku_dekimashita'];
+    // Chọn lời khen tiếng Nhật ngẫu nhiên (ưu tiên khen マイちゃん)
+    const praisePhrases = [
+      'ui_mai_jouzu',
+      'ui_mai_sugoi',
+      'ui_mai_yatta',
+      'ui_mai_kakkoii',
+      'ui_mai_sono_choushi',
+      'ui_yoku_dekimashita'
+    ];
     const randomPraiseId = praisePhrases[Math.floor(Math.random() * praisePhrases.length)];
     const praiseItem = data.uiPhraseById[randomPraiseId];
 

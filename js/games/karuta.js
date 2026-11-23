@@ -3,6 +3,8 @@
  * Trò 4: "Karuta" - đấu thẻ bài truyền thống Nhật Bản với Bé Mây.
  */
 
+import { UI } from '../core/ui.js';
+
 export default {
   id: 'karuta',
 
@@ -203,10 +205,15 @@ export default {
           answers.push({ kind: 'word', id: targetId, correct: false });
           progress.recordAnswer('word', targetId, false, data.config.mastery);
 
+          // Phát lời động viên nhẹ nhàng cho マイちゃん
+          audio.playEncouragement(data).then(phrase => {
+            if (phrase) UI.showCheerBubble(phrase.text, phrase.vi, 'yawn');
+          });
+
           setTimeout(() => {
             qIndex++;
             showQuestion(qIndex);
-          }, 900);
+          }, 1300);
         }, Math.max(2500, reactionTime));
 
         // Bé chạm thẻ
@@ -230,18 +237,26 @@ export default {
               answers.push({ kind: 'word', id: targetId, correct: isFirstTry });
               progress.recordAnswer('word', targetId, isFirstTry, data.config.mastery);
 
+              // Phát lời khen tiếng Nhật ngẫu nhiên khen マイちゃん
+              audio.playPraise(data).then(phrase => {
+                if (phrase) UI.showCheerBubble(phrase.text, phrase.vi, 'celebrate');
+              });
+
               setTimeout(() => {
                 qIndex++;
                 showQuestion(qIndex);
-              }, 800);
+              }, 1300);
             } else {
               roundWrong++;
               totalWrong++;
               card.classList.add('shake', 'wrong');
               audio.playSfx('wrong');
 
-              // Phát lại âm đúng
-              setTimeout(playWordAudio, 250);
+              // Phát lời động viên tiếng Nhật cho マイちゃん
+              audio.playEncouragement(data).then(phrase => {
+                if (phrase) UI.showCheerBubble(phrase.text, phrase.vi, 'yawn');
+                setTimeout(playWordAudio, 200);
+              });
 
               // Sau 2 lần bấm sai: tự động làm thẻ đúng phát sáng
               if (roundWrong >= 2) {

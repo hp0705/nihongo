@@ -302,4 +302,46 @@ export class AudioManager {
   getMissingFiles() {
     return Array.from(this.missingFiles);
   }
+
+  /**
+   * Phát lời khen tiếng Nhật ngẫu nhiên (nhắc tên マイちゃん)
+   */
+  async playPraise(data, onEnd) {
+    const praiseIds = [
+      'ui_mai_jouzu',
+      'ui_mai_sugoi',
+      'ui_mai_yatta',
+      'ui_mai_seikai',
+      'ui_mai_kakkoii',
+      'ui_mai_sono_choushi'
+    ];
+    const phraseId = praiseIds[Math.floor(Math.random() * praiseIds.length)];
+    const phrase = data?.uiPhraseById?.[phraseId];
+    if (phrase) {
+      const path = this.audioFor('ui', phrase);
+      await this.play(path, { fallbackText: phrase.text, onEnd });
+      return phrase;
+    }
+    return null;
+  }
+
+  /**
+   * Phát lời động viên tiếng Nhật khi sai (nhẹ nhàng nhắc マイちゃん thử lại)
+   */
+  async playEncouragement(data, onEnd) {
+    const encourageIds = [
+      'ui_mai_mouikkai',
+      'ui_mai_daijoubu',
+      'ui_mai_mouchotto',
+      'ui_mai_yukkuri'
+    ];
+    const phraseId = encourageIds[Math.floor(Math.random() * encourageIds.length)];
+    const phrase = data?.uiPhraseById?.[phraseId];
+    if (phrase) {
+      const path = this.audioFor('ui', phrase);
+      await this.play(path, { fallbackText: phrase.text, onEnd });
+      return phrase;
+    }
+    return null;
+  }
 }
