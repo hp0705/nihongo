@@ -855,13 +855,52 @@ button:active {
 .anchor-word-box {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 16px;
   background: #f8fafc;
-  border: 2px solid #e2e8f0;
+  border: 2px solid #bae6fd;
   padding: 14px 20px;
   border-radius: var(--radius-md);
   width: 100%;
-  max-width: 380px;
+  max-width: 420px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.anchor-word-box:hover {
+  background: #f0f9ff;
+  border-color: #38bdf8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.12);
+}
+
+.anchor-word-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.btn-audio-word-speaker {
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #38bdf8;
+  color: var(--color-primary-dark);
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 8px rgba(2, 132, 199, 0.15);
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.btn-audio-word-speaker:hover {
+  background: #e0f2fe;
+  transform: scale(1.08);
 }
 
 .anchor-emoji {

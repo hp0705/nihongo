@@ -121,13 +121,18 @@ export default {
           }).join('');
 
           wordHtml = `
-            <div class="anchor-word-box">
-              <span class="anchor-emoji">${anchorWord.emoji || '✨'}</span>
-              <div class="anchor-text">
-                <div class="anchor-word-kana">${formattedChars}</div>
-                ${settings.romaji ? `<div class="anchor-word-romaji">${anchorWord.romaji}</div>` : ''}
-                <div class="anchor-word-vi">${anchorWord.vi}</div>
+            <div class="anchor-word-box" id="btn-play-anchor-word" role="button" tabindex="0" aria-label="Nghe phát âm từ vựng ${anchorWord.word}">
+              <div class="anchor-word-left">
+                <span class="anchor-emoji">${anchorWord.emoji || '✨'}</span>
+                <div class="anchor-text">
+                  <div class="anchor-word-kana">${formattedChars}</div>
+                  ${settings.romaji ? `<div class="anchor-word-romaji">${anchorWord.romaji}</div>` : ''}
+                  <div class="anchor-word-vi">${anchorWord.vi}</div>
+                </div>
               </div>
+              <button class="btn-audio-word-speaker" id="btn-speaker-anchor-word" aria-label="Nghe phát âm từ ${anchorWord.word}">
+                🔊
+              </button>
             </div>
           `;
         }
@@ -161,14 +166,10 @@ export default {
 
         const playBtn = root.querySelector('#btn-play-kana');
         const nextBtn = root.querySelector('#btn-next-card');
+        const anchorWordBtn = root.querySelector('#btn-play-anchor-word');
+        const anchorSpeakerBtn = root.querySelector('#btn-speaker-anchor-word');
 
-        async function playKanaAudio() {
-          audio.playSfx('click');
-          playBtn.classList.add('pulse');
-          const path = audio.audioFor('kana', kana);
-          await audio.play(path, { fallbackText: kana.char });
-          playBtn.classList.remove('pulse');
-
+        function unlockNext() {
           if (!hasListened) {
             hasListened = true;
             nextBtn.classList.remove('disabled');
@@ -177,9 +178,48 @@ export default {
           }
         }
 
+        async function playKanaAudio() {
+          audio.playSfx('click');
+          playBtn.classList.add('pulse');
+          const path = audio.audioFor('kana', kana);
+          await audio.play(path, { fallbackText: kana.char });
+          playBtn.classList.remove('pulse');
+          unlockNext();
+        }
+
+        async function playAnchorWordAudio() {
+          if (!anchorWord) return;
+          audio.playSfx('click');
+          if (anchorSpeakerBtn) anchorSpeakerBtn.classList.add('pulse');
+          if (anchorWordBtn) anchorWordBtn.classList.add('pulse');
+          const path = audio.audioFor('word', anchorWord, 'normal');
+          await audio.play(path, { fallbackText: anchorWord.word });
+          if (anchorSpeakerBtn) anchorSpeakerBtn.classList.remove('pulse');
+          if (anchorWordBtn) anchorWordBtn.classList.remove('pulse');
+          unlockNext();
+        }
+
         playBtn.onclick = playKanaAudio;
-        // Tự động phát lần đầu cho bé nghe
-        setTimeout(playKanaAudio, 300);
+        if (anchorWordBtn) {
+          anchorWordBtn.onclick = (e) => {
+            e.stopPropagation();
+            playAnchorWordAudio();
+          };
+        }
+        if (anchorSpeakerBtn) {
+          anchorSpeakerBtn.onclick = (e) => {
+            e.stopPropagation();
+            playAnchorWordAudio();
+          };
+        }
+
+        // Tự động phát âm chữ kana trước, sau đó phát luôn từ vựng ví dụ cho bé nghe
+        setTimeout(async () => {
+          await playKanaAudio();
+          if (anchorWord && !isExited) {
+            setTimeout(playAnchorWordAudio, 400);
+          }
+        }, 300);
 
         nextBtn.onclick = () => {
           if (!hasListened) return;

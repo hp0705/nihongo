@@ -2,7 +2,7 @@
  * sw.js - Service Worker hỗ trợ học Offline (PWA)
  */
 
-const CACHE_VERSION = 'nihongo-adventure-v1.3.0';
+const CACHE_VERSION = 'nihongo-adventure-v1.4.0';
 const STATIC_ASSETS = [
   './',
   './index.html',
