@@ -139,22 +139,29 @@ class App {
     `;
 
     const startBtn = this.root.querySelector('#btn-start-game');
+    let starting = false;
     startBtn.onclick = async () => {
+      if (starting) return;
+      starting = true;
+      startBtn.classList.add('pulse');
+      startBtn.style.pointerEvents = 'none';
+
       // Mở khoá âm thanh AudioContext
       await this.audio.unlock();
       this.hasUnlockedAudio = true;
       this.audio.playSfx('fanfare');
 
-      // Phát lời chào "はじめよう!"
+      // Phát lời chào "はじめよう!" và CHỜ phát hết 100% âm thanh
       const hajimeyou = this.data.uiPhraseById['ui_hajimeyou'];
       if (hajimeyou) {
         const path = this.audio.audioFor('ui', hajimeyou);
-        this.audio.play(path, { fallbackText: 'はじめよう' });
+        await this.audio.play(path, { fallbackText: 'はじめよう' });
       }
 
+      // Nghỉ nhẹ 300ms sau khi âm thanh dứt rồi mới chuyển sang màn hình chính
       setTimeout(() => {
         this.navigate('#/home');
-      }, 500);
+      }, 300);
     };
   }
 
